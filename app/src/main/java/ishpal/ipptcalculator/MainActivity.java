@@ -1,19 +1,18 @@
 package ishpal.ipptcalculator;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.widget.Switch;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{    // add in the on click listener to this class
-    private Button male, female;        // create 2 button objects
-
+public class MainActivity extends AppCompatActivity {    // add in the on click listener to this class
+    private Switch mySwitch;
+    private String gender;
     @Override
     // basically what this method does is to initialize everything when this page is has been created
     // it will only be created by the previous "splash" screen, after its 2 second timeout
@@ -23,6 +22,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        mySwitch = (Switch)findViewById(R.id.mySwitch);
+
+        //set the switch to off
+        mySwitch.setChecked(false);
+        //attach a listener to check for changes in state
+        mySwitch.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,
+                                         boolean isChecked) {
+
+                if(isChecked){
+                    gender = "male";
+                }else{
+                    gender = "female";
+                }
+
+            }
+        });
+
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,10 +50,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .setAction("Action", null).show();
             }
         });*/
-        male = (Button) findViewById(R.id.maleButton);      // initialize male button object to maleButton in XML file and set on click listener
-        male.setOnClickListener(this);
-        female = (Button) findViewById(R.id.femaleButton);
-        female.setOnClickListener(this);
     }
 
     @Override                       // for now can ignore this
@@ -59,22 +74,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    /*  this method kicks in when a click is being made, each button in the XML has alrd been assigned to a
-        button object in this java file. When the user taps a button the 'View' will identify where the user
-        has tapped, using its getId method. This method will return either maleButton or femaleButton, according
-        to the id we state in the XML file.
-     */
-
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.maleButton:          // if the male button has been tapped
-                startActivity(new Intent(this, MaleDataEntry.class)); // create a new page for the user to key in the data, this page will now be inactive
-                break;
-            case R.id.femaleButton:        // female button tapped
-                startActivity(new Intent(this, FemaleDataEntry.class)); // we now launch the female data entry page
-                break;
-            default:        // do nothing
-        }
-    }
 }
