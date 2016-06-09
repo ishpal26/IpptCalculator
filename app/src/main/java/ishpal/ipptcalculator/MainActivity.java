@@ -1,18 +1,23 @@
 package ishpal.ipptcalculator;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.NumberPicker;
 import android.widget.Switch;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
-public class MainActivity extends AppCompatActivity {    // add in the on click listener to this class
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {    // add in the on click listener to this class
     private Switch mySwitch;
     private String gender;
+    private NumberPicker numPicker;
+    private Button cont;
     @Override
     // basically what this method does is to initialize everything when this page is has been created
     // it will only be created by the previous "splash" screen, after its 2 second timeout
@@ -22,7 +27,13 @@ public class MainActivity extends AppCompatActivity {    // add in the on click 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        cont = (Button) findViewById(R.id.continueButton);
+        cont.setOnClickListener(this);
         mySwitch = (Switch)findViewById(R.id.mySwitch);
+        numPicker = (NumberPicker) findViewById(R.id.numberPicker);
+        numPicker.setMaxValue(60);
+        numPicker.setMinValue(17);
+        numPicker.setWrapSelectorWheel(false);
 
         //set the switch to off
         mySwitch.setChecked(false);
@@ -34,9 +45,9 @@ public class MainActivity extends AppCompatActivity {    // add in the on click 
                                          boolean isChecked) {
 
                 if(isChecked){
-                    gender = "male";
-                }else{
                     gender = "female";
+                }else{
+                    gender = "male";
                 }
 
             }
@@ -74,4 +85,17 @@ public class MainActivity extends AppCompatActivity {    // add in the on click 
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onClick(View v){
+        switch (v.getId()) {
+            case R.id.continueButton:
+            if(gender == "male") {
+                int age = numPicker.getValue();
+                startActivity(new Intent(this, MaleDataEntry.class)); // we now launch the female data entry page
+            } else {
+                int age = numPicker.getValue();
+                startActivity(new Intent(this, FemaleDataEntry.class)); // we now launch the female data entry page
+            }
+        }
+    }
 }
