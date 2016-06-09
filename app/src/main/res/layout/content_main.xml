@@ -20,29 +20,46 @@
         android:textColor="#000000"
         android:textSize="28sp"
         android:typeface="serif"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        android:inputType="phone|number"
+        android:scrollIndicators="bottom|top" />
 
-    <Button
-        android:layout_width="match_parent"
+
+    <Switch
+
+        android:id="@+id/mySwitch"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Male"
-        android:id="@+id/maleButton"
-        android:layout_marginTop="127dp"
+        android:layout_marginTop="98dp"
+        android:text="Gender"
+        android:switchPadding="50dp"
+        android:longClickable="true"
+        android:checked="false"
+        android:clickable="false"
+        android:breakStrategy="high_quality"
+        android:textOn="F"
+        android:textOff="M"
         android:layout_alignTop="@+id/header"
-        android:layout_alignLeft="@+id/femaleButton"
-        android:layout_alignStart="@+id/femaleButton"
-        android:background="#0066FF"
-        android:clickable="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        android:textSize="23dp"
+        android:nestedScrollingEnabled="false"
+        android:showText="true" />
+
+    <NumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numberPicker"
+        android:layout_below="@+id/mySwitch"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Female"
-        android:id="@+id/femaleButton"
-        android:layout_below="@+id/maleButton"
+        android:text="New Button"
+        android:id="@+id/button"
+        android:layout_below="@+id/numberPicker"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="142dp"
-        android:background="#FF3300"
-        android:clickable="true" />
-
+        android:layout_marginTop="79dp" />
 </RelativeLayout>
