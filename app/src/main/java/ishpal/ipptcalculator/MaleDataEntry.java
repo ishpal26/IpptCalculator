@@ -58,5 +58,4 @@ public class MaleDataEntry extends AppCompatActivity {
             }
         });*/
     }
-
 }
