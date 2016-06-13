@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // it will only be created by the previous "splash" screen, after its 2 second timeout
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);         // this is to select which xml file will be rendered and displayed to the user
+        setContentView(R.layout.activity_main);  // this is to select which xml file will be rendered and displayed to the user
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.continueButton:
             if(gender == "male") {
                 int age = numPicker.getValue();
-                startActivity(new Intent(this, MaleDataEntry.class)); // we now launch the female data entry page
+                startActivity(new Intent(this, MaleDataEntry.class)); // we now launch the male data entry page
             } else {
                 int age = numPicker.getValue();
                 startActivity(new Intent(this, FemaleDataEntry.class)); // we now launch the female data entry page
