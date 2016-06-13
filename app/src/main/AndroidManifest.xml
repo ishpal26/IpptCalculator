@@ -34,6 +34,10 @@
         <activity
             android:name=".FemaleDataEntry"
             android:label="@string/title_activity_female_data_entry"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ResultPage"
+            android:label="@string/title_activity_result_page"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

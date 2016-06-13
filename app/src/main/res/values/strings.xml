@@ -28,4 +28,5 @@
         <item>20</item>
 
     </string-array>
+    <string name="title_activity_result_page">ResultPage</string>
 </resources>
