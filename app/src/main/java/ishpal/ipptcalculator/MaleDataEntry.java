@@ -1,5 +1,6 @@
 package ishpal.ipptcalculator;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 public class MaleDataEntry extends AppCompatActivity {
     private Spinner spin;
+    int givenAge = 0;
     ArrayAdapter<CharSequence> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,17 @@ public class MaleDataEntry extends AppCompatActivity {
         setContentView(R.layout.activity_male_data_entry);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        Intent intentExtras = getIntent();
+        Bundle extraBundle = intentExtras.getExtras();
+
+        if (extraBundle.isEmpty() == true){
+
+        } else {
+            givenAge = extraBundle.getInt("age");
+            //just to check
+            Toast.makeText(this,"age is: "+givenAge, Toast.LENGTH_SHORT).show();
+        }
+
 
         /*spin = (Spinner)findViewById(R.id.spinner);
         adapter = ArrayAdapter.createFromResource(this, R.array.minutes, android.R.layout.simple_spinner_item);

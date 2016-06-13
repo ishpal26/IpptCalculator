@@ -15,7 +15,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {    // add in the on click listener to this class
     private Switch mySwitch;
-    private String gender;
+    private String gender = "male";
     private NumberPicker numPicker;
     private Button cont;
     @Override
@@ -89,12 +89,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v){
         switch (v.getId()) {
             case R.id.continueButton:
-            if(gender == "male") {
+            if(gender.equals("male")) {
                 int age = numPicker.getValue();
-                startActivity(new Intent(this, MaleDataEntry.class)); // we now launch the female data entry page
+
+                // to pass the age to the next activity
+                Intent intentBundle = new Intent(this, MaleDataEntry.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("age", age);
+                intentBundle.putExtras(bundle);
+                startActivity(intentBundle); // we now launch the male data entry page
             } else {
                 int age = numPicker.getValue();
-                startActivity(new Intent(this, FemaleDataEntry.class)); // we now launch the female data entry page
+
+                // to pass the age to the next activity
+                Intent intentBundle = new Intent(this, FemaleDataEntry.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("age", age);
+                intentBundle.putExtras(bundle);
+                startActivity(intentBundle); // we now launch the female data entry page
             }
         }
     }
