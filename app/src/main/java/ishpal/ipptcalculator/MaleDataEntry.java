@@ -72,26 +72,25 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
     public void onClick(View v){
         switch (v.getId()) {
             case R.id.calButton:
-                String[] arrMin = minutes.getText().toString().split("min");
-                String[] arrSec = seconds.getText().toString().split("sec");
-                String[] arrPush = pushUps.getText().toString().split("reps");
-                String[] arrSit = sitUps.getText().toString().split("reps");
-                int runMin = Integer.parseInt(arrMin[0].trim());
-                int runSec = Integer.parseInt(arrSec[0].trim());
-                int pushReps = Integer.parseInt(arrPush[0].trim());
-                int sitReps = Integer.parseInt(arrSit[0].trim());
+                int runMin = Integer.parseInt(minutes.getText().toString().trim());
+                int runSec = Integer.parseInt(seconds.getText().toString().trim());
+                int pushReps = Integer.parseInt(pushUps.getText().toString().trim());
+                int sitReps = Integer.parseInt(sitUps.getText().toString().trim());
+                MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                toCheckScore.calculate();
+                int score = toCheckScore.getPoints();
+                String award = toCheckScore.getAward();
 
-
-
-                Intent intentBundle = new Intent(this, ResultPage.class);
-                Bundle bundle = new Bundle();
-                bundle.putInt("age", givenAge);
-                bundle.putInt("runMin", runMin);
-                bundle.putInt("runSec", runSec);
-                bundle.putInt("pushReps", pushReps);
-                bundle.putInt("sitReps", sitReps);
-                intentBundle.putExtras(bundle);
-                startActivity(intentBundle); // we now launch the male data entry page
+                if(award.contains("error")){
+                    Toast.makeText(this,"Error with data, please input your data correctly", Toast.LENGTH_LONG).show();
+                } else {
+                    Intent intentBundle = new Intent(this, ResultPage.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("score", score);
+                    bundle.putString("award", award);
+                    intentBundle.putExtras(bundle);
+                    startActivity(intentBundle); // we now launch the male data entry page
+                }
         }
     }
 }
