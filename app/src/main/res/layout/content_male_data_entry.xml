@@ -19,11 +19,11 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/mins"
-        android:text="@string/min"
         android:layout_marginTop="27dp"
         android:textAlignment="textEnd"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:singleLine="false" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -41,7 +41,6 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/secs"
-        android:text=" sec"
         android:textAlignment="textEnd"
         android:layout_alignTop="@+id/mins"
         android:layout_alignParentRight="true"
@@ -66,7 +65,6 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/sitUpReps"
-        android:text=" reps"
         android:textAlignment="textEnd"
         android:layout_alignTop="@+id/textView3"
         android:layout_alignLeft="@+id/mins"
@@ -88,11 +86,10 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/pushUpReps"
-        android:text=" reps"
         android:textAlignment="textEnd"
-        android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/sitUpReps"
-        android:layout_alignStart="@+id/sitUpReps" />
+        android:layout_alignStart="@+id/sitUpReps"
+        android:layout_alignTop="@+id/textView4" />
 
     <Button
         android:layout_width="wrap_content"
@@ -102,5 +99,48 @@
         android:layout_below="@+id/pushUpReps"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="95dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="min"
+        android:id="@+id/textView5"
+        android:layout_below="@+id/textView2"
+        android:layout_toRightOf="@+id/mins"
+        android:layout_toEndOf="@+id/mins" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="sec"
+        android:id="@+id/textView6"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_alignBaseline="@+id/textView5"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="reps"
+        android:id="@+id/textView7"
+        android:layout_below="@+id/textView3"
+        android:layout_toRightOf="@+id/sitUpReps"
+        android:layout_toEndOf="@+id/sitUpReps" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="reps"
+        android:id="@+id/textView8"
+        android:layout_below="@+id/textView4"
+        android:layout_toRightOf="@+id/pushUpReps"
+        android:layout_toEndOf="@+id/pushUpReps" />
 
 </RelativeLayout>

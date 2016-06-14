@@ -76,10 +76,10 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                 String[] arrSec = seconds.getText().toString().split("sec");
                 String[] arrPush = pushUps.getText().toString().split("reps");
                 String[] arrSit = sitUps.getText().toString().split("reps");
-                int runMin = Integer.parseInt(arrMin[0]);
-                int runSec = Integer.parseInt(arrSec[0]);
-                int pushReps = Integer.parseInt(arrPush[0]);
-                int sitReps = Integer.parseInt(arrSit[0]);
+                int runMin = Integer.parseInt(arrMin[0].trim());
+                int runSec = Integer.parseInt(arrSec[0].trim());
+                int pushReps = Integer.parseInt(arrPush[0].trim());
+                int sitReps = Integer.parseInt(arrSit[0].trim());
 
 
 
