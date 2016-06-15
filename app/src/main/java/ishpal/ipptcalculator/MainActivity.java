@@ -17,12 +17,14 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {    // add in the on click listener to this class
     private Switch mySwitch;
     private String gender = "male";
     private NumberPicker numPicker;
     private Button cont;
-    private static SeekBar seek_bar;
+    private static SeekBar seek_bar, cat_bar;
     private static TextView g, a, c, cP, aP;
     @Override
     // basically what this method does is to initialize everything when this page is has been created
@@ -78,23 +80,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
-
-        //This is for the number picker
-        /*
-        numPicker = (NumberPicker) findViewById(R.id.numberPicker);
-        numPicker.setMaxValue(60);
-        numPicker.setMinValue(17);
-        numPicker.setWrapSelectorWheel(false);*/
-
-
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
     }
 
     @Override                       // for now can ignore this
@@ -149,6 +134,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         seek_bar = (SeekBar)findViewById(R.id.ageSeekBar);
         aP = (TextView)findViewById(R.id.ageProgress);
         aP.setText("17");
+        final int max = 60;
+        seek_bar.setMax(max);
+
+        cat_bar = (SeekBar)findViewById(R.id.catSeekBar);
+        cP = (TextView)findViewById(R.id.categoryProgress);
+        cP.setText("Active");
+        cat_bar.setMax(1);
 
 
         seek_bar.setOnSeekBarChangeListener(
@@ -173,5 +165,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }
         );
+
+        cat_bar.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
+
+                    public int seekBarValue;    // only 0 or 1
+
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        seekBarValue = progress;
+                        if(seekBarValue == 1) {
+                            cP.setText("NSman");
+                        } else{
+                            cP.setText("Active");
+                        }
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                        if(seekBarValue == 1) {
+                            cP.setText("NSman");
+                        } else{
+                            cP.setText("Active");
+                        }
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+                        if(seekBarValue == 1) {
+                            cP.setText("NSman");
+                        } else{
+                            cP.setText("Active");
+                        }
+                    }
+                }
+        );
+
+
     }
 }
