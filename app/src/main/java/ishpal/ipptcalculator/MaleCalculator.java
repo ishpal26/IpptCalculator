@@ -1,11 +1,18 @@
 package ishpal.ipptcalculator;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * Created by Ishpal on 13/6/2016.
  */
 public class MaleCalculator {
-    int personAge, runMinutes, runSeconds, pushReps, sitReps, totalPoints =0;
+    int ageGroup, personAge, runMinutes, runSeconds, pushReps, sitReps, totalPoints =0;
+    boolean commandoOrGuards=false;
     String award;
+    //TODO check cdo/gds
+
+
     public MaleCalculator(int age, int runM, int runS, int pRep, int sRep){
         personAge = age;
         runMinutes = runM;
@@ -17,36 +24,68 @@ public class MaleCalculator {
 
     public void calculate(){
         if (personAge < 22) {
-            totalPoints = getGroup1Score();
+            ageGroup=1;
         } else if (22 <= personAge && personAge <= 24){
-            totalPoints = getGroup2Score();
+            ageGroup=2;
         } else if (25 <= personAge && personAge <= 27){
-            totalPoints = getGroup3Score();
+            ageGroup=3;
         } else if (28 <= personAge && personAge <= 30){
-            totalPoints = getGroup4Score();
+            ageGroup=4;
         } else if (31 <= personAge && personAge <= 33){
-            totalPoints = getGroup5Score();
+            ageGroup=5;
         } else if (34 <= personAge && personAge <= 36){
-            totalPoints = getGroup6Score();
+            ageGroup=6;
         } else if (37 <= personAge && personAge <= 39){
-            totalPoints = getGroup7Score();
+            ageGroup=7;
         } else if (40 <= personAge && personAge <= 42){
-            totalPoints = getGroup8Score();
+            ageGroup=8;
         } else if (43 <= personAge && personAge <= 45){
-            totalPoints = getGroup9Score();
+            ageGroup=9;
         } else if (46 <= personAge && personAge <= 48){
-            totalPoints = getGroup10Score();
+            ageGroup=10;
         } else if (49 <= personAge && personAge <= 51){
-            totalPoints = getGroup11Score();
+            ageGroup=11;
         } else if (52 <= personAge && personAge <= 54){
-            totalPoints = getGroup12Score();
+            ageGroup=12;
         } else if (55 <= personAge && personAge <= 57){
-            totalPoints = getGroup13Score();
+            ageGroup=13;
         } else {
-            totalPoints = getGroup14Score();
+            ageGroup=14;
         }
-
+        totalPoints=getScore(ageGroup);
     }
+
+    public int getScore(int group) {
+        int inSeconds = getSeconds(runMinutes, runSeconds);
+        int colToRetrieve = group + 1;
+        int totalScore = 0;
+
+        Scores scores = new Scores();
+
+        for (int i = 0; i < scores.pushUpScores.size(); i++) {
+            if (pushReps == (scores.pushUpScores.get(i).get(0))) {
+                totalScore += scores.pushUpScores.get(i).get(colToRetrieve);
+            }
+        }
+        for (int i = 0; i < scores.sitUpScores.size(); i++) {
+            if (pushReps == (scores.sitUpScores.get(i).get(0))) {
+                totalScore += scores.sitUpScores.get(i).get(colToRetrieve);
+            }
+        }
+        //TODO running scores
+
+        return totalScore;
+    }
+
+
+    private int getSeconds(int minutes, int seconds) {
+        return minutes*60 + seconds;
+    }
+
+
+
+
+
     public int getPoints(){
         return totalPoints;
     }
@@ -54,47 +93,4 @@ public class MaleCalculator {
         return award;
     }
 
-    public int getGroup1Score(){
-
-        return 0;
-    }
-    public int getGroup2Score(){
-        return 0;
-    }
-    public int getGroup3Score(){
-        return 0;
-    }
-    public int getGroup4Score(){
-        return 0;
-    }
-    public int getGroup5Score(){
-        return 0;
-    }
-    public int getGroup6Score(){
-        return 0;
-    }
-    public int getGroup7Score(){
-        return 0;
-    }
-    public int getGroup8Score(){
-        return 0;
-    }
-    public int getGroup9Score(){
-        return 0;
-    }
-    public int getGroup10Score(){
-        return 0;
-    }
-    public int getGroup11Score(){
-        return 0;
-    }
-    public int getGroup12Score(){
-        return 0;
-    }
-    public int getGroup13Score(){
-        return 0;
-    }
-    public int getGroup14Score(){
-        return 0;
-    }
 }
