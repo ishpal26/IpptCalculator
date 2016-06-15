@@ -10,19 +10,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="ishpal.ipptcalculator.MainActivity"
-    tools:showIn="@layout/activity_main">
-
-    <TextView
-        android:text="Please select your gender"
-        android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textColor="#000000"
-        android:textSize="28sp"
-        android:typeface="serif"
-        android:gravity="center_horizontal"
-        android:inputType="number"
-        android:scrollIndicators="bottom|top" />
+    tools:showIn="@layout/activity_main"
+    android:background="#D32F2F">
 
 
     <Switch
@@ -30,8 +19,6 @@
         android:id="@+id/mySwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="98dp"
-        android:text="Gender"
         android:switchPadding="50dp"
         android:longClickable="true"
         android:checked="false"
@@ -39,42 +26,99 @@
         android:breakStrategy="high_quality"
         android:textOn="F"
         android:textOff="M"
-        android:layout_alignTop="@+id/header"
-        android:layout_centerHorizontal="true"
-        android:textColor="#000000"
+        android:textColor="#FFEBEE"
         android:textSize="23dp"
         android:nestedScrollingEnabled="false"
-        android:showText="true" />
-
-    <NumberPicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/numberPicker"
-        android:layout_marginTop="27dp"
-        android:layout_below="@+id/mySwitch"
-        android:layout_alignRight="@+id/mySwitch"
-        android:layout_alignEnd="@+id/mySwitch" />
+        android:showText="true"
+        android:layout_below="@+id/genderText"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Continue"
         android:id="@+id/continueButton"
-        android:layout_below="@+id/numberPicker"
+        android:background="#FEEBEE"
+        android:textSize="14sp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="79dp" />
+        android:layout_marginBottom="16dp" />
+        <!-- android:typeface="NotoSans-Regular.ttf"/> -->
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Age"
-        android:id="@+id/textView"
-        android:layout_marginTop="74dp"
-        android:textColor="#000000"
-        android:textSize="24dp"
-        android:layout_alignTop="@+id/numberPicker"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="GENDER"
+        android:id="@+id/genderText"
+        android:textColor="#FEEBEE"
+        android:textSize="65sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="AGE"
+        android:id="@+id/ageText"
+        android:textColor="#FEEBEE"
+        android:textSize="65sp"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/catSeekBar"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="CATEGORY"
+        android:id="@+id/categoryText"
+        android:textColor="#FEEBEE"
+        android:textSize="65sp"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/mySwitch"
+        android:layout_centerHorizontal="true" />
+
+    <SeekBar
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/catSeekBar"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:indeterminate="false" />
+
+    <SeekBar
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ageSeekBar"
+        android:layout_marginTop="28dp"
+        android:layout_below="@+id/ageProgress"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:indeterminate="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="NSF"
+        android:id="@+id/categoryProgress"
+        android:textColor="#EF9A9A"
+        android:layout_below="@+id/categoryText"
         android:layout_alignLeft="@+id/mySwitch"
-        android:layout_alignStart="@+id/mySwitch" />
+        android:layout_alignStart="@+id/mySwitch"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Text"
+        android:id="@+id/ageProgress"
+        android:textColor="#EF9A9A"
+        android:textSize="20dp"
+        android:layout_below="@+id/ageText"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
