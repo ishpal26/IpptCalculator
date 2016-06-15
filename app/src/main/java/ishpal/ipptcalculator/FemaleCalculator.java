@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * Created by Ishpal on 13/6/2016.
+ * Created by freez_000 on 13/6/2016.
  */
-public class MaleCalculator {
+public class FemaleCalculator {
     int ageGroup, personAge, runMinutes, runSeconds, pushReps, sitReps, totalPoints =0;
     String award;
 
-    public MaleCalculator(int age, int runM, int runS, int pRep, int sRep){
+    public FemaleCalculator(int age, int runM, int runS, int pRep, int sRep){
         personAge = age;
         runMinutes = runM;
         runSeconds = runS;
@@ -59,7 +59,7 @@ public class MaleCalculator {
         int userTime= getSeconds(runMinutes,runSeconds);
         int totalScore = 0;
 
-        MaleScores scores = new MaleScores();
+        FemaleScores scores = new FemaleScores();
 
         for (int i = 0; i < scores.pushUpScores.size(); i++) {
             if (pushReps == (scores.pushUpScores.get(i).get(0))) {
@@ -95,10 +95,8 @@ public class MaleCalculator {
             return "GOLD";
         }else if(totalPoints<85 && totalPoints>=75) {
             return "SILVER";
-        } else if (totalPoints<75 && totalPoints>= 61) {
-            return "PASS WITH INCENTIVE(NSMEN)" + '\n' + "PASS(NSF/ACTIVE)";
-        }else if (totalPoints<61 && totalPoints>=51){
-            return "PASS(NSMEN)" + '\n' + "FAIL(NSF/ACTIVE)";
+        } else if (totalPoints<75 && totalPoints>= 51) {
+            return "PASS";
         } else {
             return "FAIL";
         }
