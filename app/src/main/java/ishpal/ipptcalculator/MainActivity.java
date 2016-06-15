@@ -17,13 +17,14 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {    // add in the on click listener to this class
-    private Switch mySwitch;
-    private String gender = "male";
-    private NumberPicker numPicker;
+    private Switch mySwitch, catSwitch;
+    private String gender = "male", cat = "Active";
     private Button cont;
     private static SeekBar seek_bar;
-    private static TextView g, a, c, cP, aP;
+    private static TextView g, a, c, cP, aP, genderText;
     @Override
     // basically what this method does is to initialize everything when this page is has been created
     // it will only be created by the previous "splash" screen, after its 2 second timeout
@@ -50,10 +51,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cP =  (TextView) findViewById(R.id.categoryProgress);
         Typeface myCustomFont3 = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Light.ttf");
         cP.setTypeface(myCustomFont3);
+        cP.setText("Active");
 
         aP =  (TextView) findViewById(R.id.ageProgress);
         Typeface myCustomFont4 = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Light.ttf");
         aP.setTypeface(myCustomFont4);
+
+        genderText =  (TextView) findViewById(R.id.textView);
+        Typeface myCustomFont5 = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Light.ttf");
+        genderText.setTypeface(myCustomFont5);
+        genderText.setText("Male");
 
         //This is for the button
         cont = (Button) findViewById(R.id.continueButton);
@@ -69,32 +76,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onCheckedChanged(CompoundButton buttonView,
                                          boolean isChecked) {
-
                 if(isChecked){
                     gender = "female";
+                    genderText.setText("Female");
                 }else{
                     gender = "male";
+                    genderText.setText("Male");
                 }
 
             }
         });
 
-        //This is for the number picker
-        /*
-        numPicker = (NumberPicker) findViewById(R.id.numberPicker);
-        numPicker.setMaxValue(60);
-        numPicker.setMinValue(17);
-        numPicker.setWrapSelectorWheel(false);*/
+        //This is for the gender switch
+        catSwitch = (Switch)findViewById(R.id.catSwitch);
+        //set the switch to off
+        catSwitch.setChecked(false);
+        //attach a listener to check for changes in state
+        catSwitch.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
-
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onCheckedChanged(CompoundButton buttonView,
+                                         boolean isChecked) {
+                if(isChecked){
+                    cat = "NSman";
+                    cP.setText(""+ "NSman");
+                }else{
+                    cat = "Active";
+                    cP.setText(""+ "Active");
+                }
+
             }
-        });*/
+        });
     }
 
     @Override                       // for now can ignore this
@@ -130,6 +142,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intentBundle = new Intent(this, MaleDataEntry.class);
                 Bundle bundle = new Bundle();
                 bundle.putInt("age", age);
+                bundle.putString("cat",cat);
                 intentBundle.putExtras(bundle);
                 startActivity(intentBundle); // we now launch the male data entry page
             } else {
@@ -139,6 +152,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intentBundle = new Intent(this, FemaleDataEntry.class);
                 Bundle bundle = new Bundle();
                 bundle.putInt("age", age);
+                bundle.putString("cat",cat);
                 intentBundle.putExtras(bundle);
                 startActivity(intentBundle); // we now launch the female data entry page
             }
@@ -149,7 +163,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         seek_bar = (SeekBar)findViewById(R.id.ageSeekBar);
         aP = (TextView)findViewById(R.id.ageProgress);
         aP.setText("17");
-
+        final int max = 60;
+        seek_bar.setMax(max);
 
         seek_bar.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
@@ -173,5 +188,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }
         );
+
     }
 }
