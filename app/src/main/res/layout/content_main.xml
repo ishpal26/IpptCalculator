@@ -30,7 +30,7 @@
         android:textSize="23dp"
         android:nestedScrollingEnabled="false"
         android:showText="true"
-        android:layout_below="@+id/genderText"
+        android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -41,8 +41,7 @@
         android:background="#FEEBEE"
         android:textSize="14sp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp" />
+        android:layout_centerHorizontal="true" />
         <!-- android:typeface="NotoSans-Regular.ttf"/> -->
 
     <TextView
@@ -64,9 +63,9 @@
         android:id="@+id/ageText"
         android:textColor="#FEEBEE"
         android:textSize="65sp"
-        android:layout_marginTop="12dp"
-        android:layout_below="@+id/catSeekBar"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/catSwitch"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -83,14 +82,6 @@
     <SeekBar
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/catSeekBar"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:indeterminate="false" />
-
-    <SeekBar
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/ageSeekBar"
         android:layout_marginTop="28dp"
         android:layout_below="@+id/ageProgress"
@@ -102,13 +93,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="NSF"
+        android:text="Active"
         android:id="@+id/categoryProgress"
         android:textColor="#EF9A9A"
+        android:textSize="20dp"
         android:layout_below="@+id/categoryText"
-        android:layout_alignLeft="@+id/mySwitch"
-        android:layout_alignStart="@+id/mySwitch"
-        android:textSize="20dp" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -119,6 +109,25 @@
         android:textColor="#EF9A9A"
         android:textSize="20dp"
         android:layout_below="@+id/ageText"
+        android:layout_centerHorizontal="true" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/catSwitch"
+        android:checked="false"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Male"
+        android:id="@+id/textView"
+        android:textColor="#EF9A9A"
+        android:textSize="20dp"
+        android:layout_below="@+id/genderText"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

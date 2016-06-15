@@ -20,12 +20,11 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {    // add in the on click listener to this class
-    private Switch mySwitch;
-    private String gender = "male";
-    private NumberPicker numPicker;
+    private Switch mySwitch, catSwitch;
+    private String gender = "male", cat = "Active";
     private Button cont;
-    private static SeekBar seek_bar, cat_bar;
-    private static TextView g, a, c, cP, aP;
+    private static SeekBar seek_bar;
+    private static TextView g, a, c, cP, aP, genderText;
     @Override
     // basically what this method does is to initialize everything when this page is has been created
     // it will only be created by the previous "splash" screen, after its 2 second timeout
@@ -52,10 +51,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cP =  (TextView) findViewById(R.id.categoryProgress);
         Typeface myCustomFont3 = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Light.ttf");
         cP.setTypeface(myCustomFont3);
+        cP.setText("Active");
 
         aP =  (TextView) findViewById(R.id.ageProgress);
         Typeface myCustomFont4 = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Light.ttf");
         aP.setTypeface(myCustomFont4);
+
+        genderText =  (TextView) findViewById(R.id.textView);
+        Typeface myCustomFont5 = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Light.ttf");
+        genderText.setTypeface(myCustomFont5);
+        genderText.setText("Male");
 
         //This is for the button
         cont = (Button) findViewById(R.id.continueButton);
@@ -71,11 +76,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onCheckedChanged(CompoundButton buttonView,
                                          boolean isChecked) {
-
                 if(isChecked){
                     gender = "female";
+                    genderText.setText("Female");
                 }else{
                     gender = "male";
+                    genderText.setText("Male");
+                }
+
+            }
+        });
+
+        //This is for the gender switch
+        catSwitch = (Switch)findViewById(R.id.catSwitch);
+        //set the switch to off
+        catSwitch.setChecked(false);
+        //attach a listener to check for changes in state
+        catSwitch.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,
+                                         boolean isChecked) {
+                if(isChecked){
+                    cat = "NSman";
+                    cP.setText(""+ "NSman");
+                }else{
+                    cat = "Active";
+                    cP.setText(""+ "Active");
                 }
 
             }
@@ -115,6 +142,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intentBundle = new Intent(this, MaleDataEntry.class);
                 Bundle bundle = new Bundle();
                 bundle.putInt("age", age);
+                bundle.putString("cat",cat);
                 intentBundle.putExtras(bundle);
                 startActivity(intentBundle); // we now launch the male data entry page
             } else {
@@ -124,6 +152,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intentBundle = new Intent(this, FemaleDataEntry.class);
                 Bundle bundle = new Bundle();
                 bundle.putInt("age", age);
+                bundle.putString("cat",cat);
                 intentBundle.putExtras(bundle);
                 startActivity(intentBundle); // we now launch the female data entry page
             }
@@ -136,12 +165,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         aP.setText("17");
         final int max = 60;
         seek_bar.setMax(max);
-
-        cat_bar = (SeekBar)findViewById(R.id.catSeekBar);
-        cP = (TextView)findViewById(R.id.categoryProgress);
-        cP.setText("Active");
-        cat_bar.setMax(1);
-
 
         seek_bar.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
@@ -165,42 +188,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }
         );
-
-        cat_bar.setOnSeekBarChangeListener(
-                new SeekBar.OnSeekBarChangeListener() {
-
-                    public int seekBarValue;    // only 0 or 1
-
-                    @Override
-                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                        seekBarValue = progress;
-                        if(seekBarValue == 1) {
-                            cP.setText("NSman");
-                        } else{
-                            cP.setText("Active");
-                        }
-                    }
-
-                    @Override
-                    public void onStartTrackingTouch(SeekBar seekBar) {
-                        if(seekBarValue == 1) {
-                            cP.setText("NSman");
-                        } else{
-                            cP.setText("Active");
-                        }
-                    }
-
-                    @Override
-                    public void onStopTrackingTouch(SeekBar seekBar) {
-                        if(seekBarValue == 1) {
-                            cP.setText("NSman");
-                        } else{
-                            cP.setText("Active");
-                        }
-                    }
-                }
-        );
-
 
     }
 }
