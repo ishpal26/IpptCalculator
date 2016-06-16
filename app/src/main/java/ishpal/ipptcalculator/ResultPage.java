@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Toast;
 
 public class ResultPage extends AppCompatActivity {
-    int points;
+    int points, runpts,pushpts,sitpts;
     String award;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +27,13 @@ public class ResultPage extends AppCompatActivity {
         } else {
             points = extraBundle.getInt("score");
             award = extraBundle.getString("award");
+            runpts = extraBundle.getInt("runscore");
+            sitpts = extraBundle.getInt("sitscore");
+            pushpts = extraBundle.getInt("pushscore");
+
             //just to check
-            Toast.makeText(this,"score: "+points +", \n"+award, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"score: "+points +", \n"+award +"\n pushScore: "+pushpts +"\n sitscore: "+sitpts +"\n runscore: "+runpts,
+                    Toast.LENGTH_LONG).show();
         }
 
 

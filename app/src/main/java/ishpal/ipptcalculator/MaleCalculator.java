@@ -7,7 +7,7 @@ import java.util.Arrays;
  * Created by Ishpal on 13/6/2016.
  */
 public class MaleCalculator {
-    int ageGroup, personAge, runMinutes, runSeconds, pushReps, sitReps, totalPoints =0;
+    int ageGroup, personAge, runMinutes, runSeconds, pushReps, sitReps, totalPoints =0, pushPoints, runPoints, sitPoints;
     String award;
 
     public MaleCalculator(int age, int runM, int runS, int pRep, int sRep){
@@ -64,17 +64,20 @@ public class MaleCalculator {
         for (int i = 0; i < scores.pushUpScores.size(); i++) {
             if (pushReps == (scores.pushUpScores.get(i).get(0))) {
                 totalScore += scores.pushUpScores.get(i).get(colToRetrieve);
+                pushPoints = scores.pushUpScores.get(i).get(colToRetrieve);
                 break;
             }
         }
         for (int i = 0; i < scores.sitUpScores.size(); i++) {
-            if (pushReps == (scores.sitUpScores.get(i).get(0))) {
+            if (sitReps == (scores.sitUpScores.get(i).get(0))) {
                 totalScore += scores.sitUpScores.get(i).get(colToRetrieve);
+                sitPoints = scores.sitUpScores.get(i).get(colToRetrieve);
                 break;
             }
         }
         if(userTime <= scores.runningScores.get(0).get(0)) {
             totalScore += scores.runningScores.get(0).get(1);
+            runPoints = scores.runningScores.get(0).get(1);
             return totalScore;
         }
 
@@ -82,6 +85,7 @@ public class MaleCalculator {
 
             if(scores.runningScores.get(i).get(0)+1<=userTime && userTime<scores.runningScores.get(i+1).get(0)){
                 totalScore+=scores.runningScores.get(i).get(colToRetrieve);
+                runPoints = scores.runningScores.get(i).get(colToRetrieve);
             }
         }
         return totalScore;
@@ -111,8 +115,9 @@ public class MaleCalculator {
     public int getPoints(){
         return totalPoints;
     }
-    public String getAward(){
-        return award;
-    }
+    public int getSitUpPoints(){return sitPoints;}
+    public int getRunPoints(){return runPoints;}
+    public int getPushUpPoints(){return pushPoints;}
+    public String getAward(){return award;}
 
 }

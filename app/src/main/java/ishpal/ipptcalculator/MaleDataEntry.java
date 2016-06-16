@@ -81,6 +81,10 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                     Bundle bundle = new Bundle();
                     bundle.putInt("score", score);
                     bundle.putString("award", award);
+                    // for checking
+                    bundle.putInt("pushscore", toCheckScore.getPushUpPoints());
+                    bundle.putInt("sitscore", toCheckScore.getSitUpPoints());
+                    bundle.putInt("runscore", toCheckScore.getRunPoints());
                     intentBundle.putExtras(bundle);
                     startActivity(intentBundle); // we now launch the male data entry page
                 }
