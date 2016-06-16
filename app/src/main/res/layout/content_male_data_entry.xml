@@ -18,11 +18,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="2.4km Run"
+        android:text="2.4"
         android:id="@+id/textView2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textColor="#FEEBEE" />
+        android:textColor="#FEEBEE"
+        android:textSize="65dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,9 +32,10 @@
         android:text="SIT UPS"
         android:id="@+id/textView3"
         android:textColor="#FEEBEE"
-        android:layout_above="@+id/sitText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:textSize="65dp"
+        android:layout_below="@+id/minBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -42,43 +44,47 @@
         android:text="PUSH UPS"
         android:id="@+id/textView4"
         android:textColor="#FEEBEE"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="17dp"
+        android:textSize="65dp"
         android:layout_below="@+id/sitBar"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Min"
+        android:text="min"
         android:id="@+id/minText"
         android:textColor="#FEEBEE"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignTop="@+id/secText"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Sec"
+        android:text="sec"
         android:id="@+id/secText"
         android:textColor="#FEEBEE"
-        android:layout_above="@+id/secBar"
-        android:layout_alignRight="@+id/sitText"
-        android:layout_alignEnd="@+id/sitText"
-        android:layout_marginBottom="24dp" />
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/textView2"
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Reps"
+        android:text="reps"
         android:id="@+id/sitText"
         android:textColor="#FEEBEE"
-        android:layout_marginBottom="18dp"
-        android:layout_above="@+id/sitBar"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/pushText"
+        android:layout_alignStart="@+id/pushText"
+        android:layout_marginTop="8dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -87,6 +93,7 @@
         android:text="Reps"
         android:id="@+id/pushText"
         android:textColor="#FEEBEE"
+        android:layout_marginTop="8dp"
         android:layout_below="@+id/textView4"
         android:layout_centerHorizontal="true" />
 
@@ -104,7 +111,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/pushBar"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="12dp"
         android:layout_below="@+id/pushText"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
@@ -113,39 +120,35 @@
         android:progress="1" />
 
     <SeekBar
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/sitBar"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:progress="1"
-        android:indeterminate="false" />
+        android:indeterminate="false"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/sitText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <SeekBar
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:id="@+id/minBar"
+        android:layout_marginTop="7dp"
+        android:progress="1"
         android:layout_below="@+id/minText"
-        android:layout_marginTop="23dp"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:progress="1" />
+        android:layout_alignParentStart="true" />
 
     <SeekBar
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/secBar"
-        android:layout_above="@+id/textView3"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="34dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:progress="1" />
+        android:progress="1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_alignTop="@+id/minBar"
+        android:layout_toRightOf="@+id/minBar"
+        android:layout_toEndOf="@+id/minBar" />
 
 </RelativeLayout>

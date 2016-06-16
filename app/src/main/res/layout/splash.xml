@@ -3,17 +3,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#336600">
-
-    <TextView
-        android:text="Welcome to\nIpptCalculator"
-        android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textColor="#FFFFFF"
-        android:textSize="28sp"
-        android:typeface="serif"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="200dp"/>
+    android:background="#D32F2F">
 
 </LinearLayout>

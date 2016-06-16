@@ -24,14 +24,14 @@
         android:checked="false"
         android:clickable="false"
         android:breakStrategy="high_quality"
-        android:textOn="F"
-        android:textOff="M"
         android:textColor="#FFEBEE"
         android:textSize="23dp"
         android:nestedScrollingEnabled="false"
         android:showText="true"
         android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textOff=" "
+        android:textOn=" " />
 
     <Button
         android:layout_width="wrap_content"

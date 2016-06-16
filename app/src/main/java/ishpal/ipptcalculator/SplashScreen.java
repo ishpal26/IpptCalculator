@@ -20,9 +20,9 @@ public class SplashScreen extends Activity {
         setContentView(R.layout.splash);
 
         //This portion makes the fonts nice
-        t =  (TextView) findViewById(R.id.header);
+        /*t =  (TextView) findViewById(R.id.header);
         Typeface myCustomFont = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Thin.ttf");
-        t.setTypeface(myCustomFont);
+        t.setTypeface(myCustomFont);*/
 
         Thread timerThread = new Thread(){
             public void run(){

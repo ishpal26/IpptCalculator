@@ -3,6 +3,7 @@
     <color name="colorPrimary">#FEEBEE</color>              <!-- #3F51B5 is the original colour-->
     <color name="colorPrimaryDark">#B71C1C</color>          <!-- #303F9F is the original colour-->
     <color name="colorAccent">#FEEBEE</color>               <!-- #FF4081 is the original colour-->
+    <color name="navigationBarColor">#B71C1C</color>
     <color name= "buttonRed">#ff3399</color>
     <color name = "buttonBlue">#3399ff</color>
 </resources>
