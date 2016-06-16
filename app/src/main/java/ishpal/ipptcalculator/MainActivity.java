@@ -37,28 +37,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //This is to make the fonts nice
         g =  (TextView) findViewById(R.id.ageText);
-        Typeface myCustomFont = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Light.ttf");
+        Typeface myCustomFont = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Thin.ttf");
         g.setTypeface(myCustomFont);
 
         a =  (TextView) findViewById(R.id.genderText);
-        Typeface myCustomFont1 = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Light.ttf");
+        Typeface myCustomFont1 = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Thin.ttf");
         a.setTypeface(myCustomFont1);
 
         c =  (TextView) findViewById(R.id.categoryText);
-        Typeface myCustomFont2 = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Light.ttf");
+        Typeface myCustomFont2 = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Thin.ttf");
         c.setTypeface(myCustomFont2);
 
         cP =  (TextView) findViewById(R.id.categoryProgress);
-        Typeface myCustomFont3 = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Light.ttf");
+        Typeface myCustomFont3 = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Thin.ttf");
         cP.setTypeface(myCustomFont3);
         cP.setText("Active");
 
         aP =  (TextView) findViewById(R.id.ageProgress);
-        Typeface myCustomFont4 = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Light.ttf");
+        Typeface myCustomFont4 = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Thin.ttf");
         aP.setTypeface(myCustomFont4);
 
         genderText =  (TextView) findViewById(R.id.textView);
-        Typeface myCustomFont5 = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Light.ttf");
+        Typeface myCustomFont5 = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Thin.ttf");
         genderText.setTypeface(myCustomFont5);
         genderText.setText("Male");
 
