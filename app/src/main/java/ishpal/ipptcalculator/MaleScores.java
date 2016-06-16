@@ -9,6 +9,9 @@ import java.util.ArrayList;
  */
 public class MaleScores {
 
+    public MaleScores(){
+
+    }
     public static final List<List<Integer>> pushUpScores= new ArrayList<List<Integer>>() {
         {
             pushUpScores.add(Arrays.asList(60, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25));

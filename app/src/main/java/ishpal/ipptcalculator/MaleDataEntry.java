@@ -19,11 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MaleDataEntry extends AppCompatActivity implements View.OnClickListener {
-    private Spinner spin;
     EditText minutes,seconds,pushUps,sitUps;
-    //Button calculate;
     int givenAge = 0;
-    //ArrayAdapter<CharSequence> adapter;
     TextView t2, t3, t4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
