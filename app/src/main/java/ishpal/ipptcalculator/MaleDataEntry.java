@@ -14,20 +14,21 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MaleDataEntry extends AppCompatActivity implements View.OnClickListener {
-    EditText minutes,seconds,pushUps,sitUps;
     int givenAge = 0;
-    TextView t2, t3, t4;
+    TextView t2, t3, t4, minText, secText, sitText, pushText;
+    SeekBar minBar, secBar, pushBar, sitBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_male_data_entry);
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
+
         Intent intentExtras = getIntent();
         Bundle extraBundle = intentExtras.getExtras();
 
@@ -43,6 +44,24 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
         Typeface myCustomFont4 = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Thin.ttf");
         t4.setTypeface(myCustomFont4);
 
+        minText =  (TextView) findViewById(R.id.minText);
+        Typeface myCustomFont5 = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Thin.ttf");
+        minText.setTypeface(myCustomFont5);
+
+        secText =  (TextView) findViewById(R.id.secText);
+        Typeface myCustomFont6 = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Thin.ttf");
+        secText.setTypeface(myCustomFont6);
+
+        pushText =  (TextView) findViewById(R.id.pushText);
+        Typeface myCustomFont7 = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Thin.ttf");
+        pushText.setTypeface(myCustomFont7);
+
+        sitText =  (TextView) findViewById(R.id.sitText);
+        Typeface myCustomFont8 = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Thin.ttf");
+        sitText.setTypeface(myCustomFont8);
+
+        seekbar();
+
         if (extraBundle.isEmpty() == true){
         } else {
             givenAge = extraBundle.getInt("age");
@@ -50,12 +69,6 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
             Toast.makeText(this,"Age: "+givenAge, Toast.LENGTH_SHORT).show();
         }
 
-        /*calculate = (Button) findViewById(R.id.calButton);
-        calculate.setOnClickListener(this);*/
-        minutes = (EditText) findViewById(R.id.mins);
-        seconds = (EditText) findViewById(R.id.secs);
-        pushUps = (EditText) findViewById(R.id.pushUpReps);
-        sitUps = (EditText) findViewById(R.id.sitUpReps);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(this);
@@ -65,10 +78,18 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
     public void onClick(View v){
         switch (v.getId()) {
             case R.id.fab:
-                int runMin = Integer.parseInt(minutes.getText().toString().trim());
-                int runSec = Integer.parseInt(seconds.getText().toString().trim());
-                int pushReps = Integer.parseInt(pushUps.getText().toString().trim());
-                int sitReps = Integer.parseInt(sitUps.getText().toString().trim());
+                String[] minArr = minText.getText().toString().trim().split(" ");
+                String[] secArr = secText.getText().toString().trim().split(" ");
+                String[] pushArr = pushText.getText().toString().trim().split(" ");
+                String[] sitArr = sitText.getText().toString().trim().split(" ");
+
+                int runMin = Integer.parseInt(minArr[0]);
+                int runSec = Integer.parseInt(secArr[0]);
+                int pushReps = Integer.parseInt(pushArr[0]);
+                int sitReps = Integer.parseInt(sitArr[0]);
+
+                Toast.makeText(this,runMin+", "+runSec+", "+pushReps+", "+sitReps, Toast.LENGTH_LONG).show();
+
                 MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
                 toCheckScore.calculate();
                 int score = toCheckScore.getPoints();
@@ -89,5 +110,116 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                     startActivity(intentBundle); // we now launch the male data entry page
                 }
         }
+    }
+
+    public void seekbar() {
+        minBar = (SeekBar)findViewById(R.id.minBar);
+        minBar.setMax(20);
+        minText.setText("12" +" Mins");
+
+        minBar.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
+
+                    public int valFromBar;
+
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        valFromBar = progress;
+                        minText.setText(valFromBar+ " Mins");
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                        minText.setText(valFromBar + " Mins");
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+                        minText.setText(valFromBar + " Mins");
+                    }
+                }
+        );
+
+        secBar = (SeekBar)findViewById(R.id.secBar);
+        secBar.setMax(59);
+        secText.setText("0" +" Sec");
+
+        secBar.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
+
+                    public int valFromBar;
+
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        valFromBar = progress;
+                        secText.setText(valFromBar+ " Secs");
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                        secText.setText(valFromBar + " Secs");
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+                        secText.setText(valFromBar + " Secs");
+                    }
+                }
+        );
+
+        pushBar = (SeekBar)findViewById(R.id.pushBar);
+        pushBar.setMax(70);
+        pushText.setText("30"+" Reps");
+
+        pushBar.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
+
+                    public int valFromBar;
+
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        valFromBar = progress;
+                        pushText.setText(valFromBar+ " Reps");
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                        pushText.setText(valFromBar + " Reps");
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+                        pushText.setText(valFromBar + " Reps");
+                    }
+                }
+        );
+
+        sitBar = (SeekBar)findViewById(R.id.sitBar);
+        sitBar.setMax(70);
+        sitText.setText("30 reps");
+
+        sitBar.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
+
+                    public int valFromBar;
+
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        valFromBar = progress;
+                        sitText.setText(valFromBar +" Reps");
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                        sitText.setText(valFromBar + " Reps");
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+                        sitText.setText(valFromBar + " Reps");
+                    }
+                }
+        );
+
     }
 }
