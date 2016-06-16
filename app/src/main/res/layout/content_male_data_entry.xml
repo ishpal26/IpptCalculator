@@ -11,7 +11,8 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="ishpal.ipptcalculator.MaleDataEntry"
     tools:showIn="@layout/activity_male_data_entry"
-    android:gravity="end">
+    android:gravity="end"
+    android:background="#D32F2F">
 
     <EditText
         android:layout_width="70dp"
@@ -23,17 +24,19 @@
         android:textAlignment="textEnd"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:singleLine="false" />
+        android:singleLine="false"
+        android:backgroundTint="#FEEBEE" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="2.4 Running"
+        android:text="2.4 RUNNING"
         android:id="@+id/textView2"
         android:layout_alignTop="@+id/mins"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#FEEBEE" />
 
     <EditText
         android:layout_width="70dp"
@@ -46,18 +49,20 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="32dp"
-        android:layout_marginEnd="32dp" />
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#FEEBEE" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Sit Ups"
+        android:text="SIT UPS"
         android:id="@+id/textView3"
         android:layout_below="@+id/mins"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="76dp" />
+        android:layout_marginTop="76dp"
+        android:textColor="#FEEBEE" />
 
     <EditText
         android:layout_width="70dp"
@@ -68,17 +73,19 @@
         android:textAlignment="textEnd"
         android:layout_alignTop="@+id/textView3"
         android:layout_alignLeft="@+id/mins"
-        android:layout_alignStart="@+id/mins" />
+        android:layout_alignStart="@+id/mins"
+        android:backgroundTint="#FEEBEE" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Push Ups"
+        android:text="PUSH UPS"
         android:id="@+id/textView4"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#FEEBEE" />
 
     <EditText
         android:layout_width="70dp"
@@ -89,16 +96,9 @@
         android:textAlignment="textEnd"
         android:layout_alignLeft="@+id/sitUpReps"
         android:layout_alignStart="@+id/sitUpReps"
-        android:layout_alignTop="@+id/textView4" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Calculate"
-        android:id="@+id/calButton"
-        android:layout_below="@+id/pushUpReps"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="95dp" />
+        android:layout_alignTop="@+id/textView4"
+        android:visibility="visible"
+        android:backgroundTint="#FEEBEE" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -108,7 +108,8 @@
         android:id="@+id/textView5"
         android:layout_below="@+id/textView2"
         android:layout_toRightOf="@+id/mins"
-        android:layout_toEndOf="@+id/mins" />
+        android:layout_toEndOf="@+id/mins"
+        android:textColor="#FEEBEE" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -121,7 +122,8 @@
         android:layout_alignBaseline="@+id/textView5"
         android:layout_alignBottom="@+id/textView5"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textColor="#FEEBEE" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -131,7 +133,8 @@
         android:id="@+id/textView7"
         android:layout_below="@+id/textView3"
         android:layout_toRightOf="@+id/sitUpReps"
-        android:layout_toEndOf="@+id/sitUpReps" />
+        android:layout_toEndOf="@+id/sitUpReps"
+        android:textColor="#FEEBEE" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -141,6 +144,18 @@
         android:id="@+id/textView8"
         android:layout_below="@+id/textView4"
         android:layout_toRightOf="@+id/pushUpReps"
-        android:layout_toEndOf="@+id/pushUpReps" />
+        android:layout_toEndOf="@+id/pushUpReps"
+        android:textColor="#FEEBEE" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/abc_ic_go_search_api_mtrl_alpha"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="57dp"
+        android:longClickable="true" />
 
 </RelativeLayout>
