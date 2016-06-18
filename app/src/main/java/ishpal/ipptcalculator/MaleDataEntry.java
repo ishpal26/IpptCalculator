@@ -80,13 +80,12 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
             case R.id.fab:
                 String[] minArr = minText.getText().toString().trim().split(" ");
                 String[] secArr = secText.getText().toString().trim().split(" ");
-                String[] pushArr = pushText.getText().toString().trim().split(" ");
-                String[] sitArr = sitText.getText().toString().trim().split(" ");
+
 
                 int runMin = Integer.parseInt(minArr[0]);
                 int runSec = Integer.parseInt(secArr[0]);
-                int pushReps = Integer.parseInt(pushArr[0]);
-                int sitReps = Integer.parseInt(sitArr[0]);
+                int pushReps = Integer.parseInt(pushText.getText().toString());
+                int sitReps = Integer.parseInt(sitText.getText().toString());
 
                 Toast.makeText(this,runMin+", "+runSec+", "+pushReps+", "+sitReps, Toast.LENGTH_LONG).show();
 
@@ -115,7 +114,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
     public void seekbar() {
         minBar = (SeekBar)findViewById(R.id.minBar);
         minBar.setMax(20);
-        minText.setText("12" +" Mins");
+        minText.setText("12" +" m");
 
         minBar.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
@@ -125,24 +124,24 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                         valFromBar = progress;
-                        minText.setText(valFromBar+ " Mins");
+                        minText.setText(valFromBar+ " m");
                     }
 
                     @Override
                     public void onStartTrackingTouch(SeekBar seekBar) {
-                        minText.setText(valFromBar + " Mins");
+                        minText.setText(valFromBar + " m");
                     }
 
                     @Override
                     public void onStopTrackingTouch(SeekBar seekBar) {
-                        minText.setText(valFromBar + " Mins");
+                        minText.setText(valFromBar + " m");
                     }
                 }
         );
 
         secBar = (SeekBar)findViewById(R.id.secBar);
         secBar.setMax(59);
-        secText.setText("0" +" Sec");
+        secText.setText("0" +" s");
 
         secBar.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
@@ -152,24 +151,24 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                         valFromBar = progress;
-                        secText.setText(valFromBar+ " Secs");
+                        secText.setText(valFromBar+ " s");
                     }
 
                     @Override
                     public void onStartTrackingTouch(SeekBar seekBar) {
-                        secText.setText(valFromBar + " Secs");
+                        secText.setText(valFromBar + " s");
                     }
 
                     @Override
                     public void onStopTrackingTouch(SeekBar seekBar) {
-                        secText.setText(valFromBar + " Secs");
+                        secText.setText(valFromBar + " s");
                     }
                 }
         );
 
         pushBar = (SeekBar)findViewById(R.id.pushBar);
         pushBar.setMax(70);
-        pushText.setText("30"+" Reps");
+        pushText.setText("30");
 
         pushBar.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
@@ -179,24 +178,24 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                         valFromBar = progress;
-                        pushText.setText(valFromBar+ " Reps");
+                        pushText.setText(valFromBar);
                     }
 
                     @Override
                     public void onStartTrackingTouch(SeekBar seekBar) {
-                        pushText.setText(valFromBar + " Reps");
+                        pushText.setText(valFromBar);
                     }
 
                     @Override
                     public void onStopTrackingTouch(SeekBar seekBar) {
-                        pushText.setText(valFromBar + " Reps");
+                        pushText.setText(valFromBar);
                     }
                 }
         );
 
         sitBar = (SeekBar)findViewById(R.id.sitBar);
         sitBar.setMax(70);
-        sitText.setText("30 reps");
+        sitText.setText("30");
 
         sitBar.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
@@ -206,17 +205,17 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                         valFromBar = progress;
-                        sitText.setText(valFromBar +" Reps");
+                        sitText.setText(valFromBar);
                     }
 
                     @Override
                     public void onStartTrackingTouch(SeekBar seekBar) {
-                        sitText.setText(valFromBar + " Reps");
+                        sitText.setText(valFromBar);
                     }
 
                     @Override
                     public void onStopTrackingTouch(SeekBar seekBar) {
-                        sitText.setText(valFromBar + " Reps");
+                        sitText.setText(valFromBar);
                     }
                 }
         );
