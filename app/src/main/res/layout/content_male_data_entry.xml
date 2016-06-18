@@ -22,8 +22,12 @@
         android:id="@+id/textView2"
         android:textColor="#FEEBEE"
         android:textSize="65dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_below="@+id/fab"
+        android:layout_toRightOf="@+id/minBar"
+        android:layout_toEndOf="@+id/minBar" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -56,10 +60,10 @@
         android:text="min"
         android:id="@+id/minText"
         android:textColor="#FEEBEE"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp"
         android:textAlignment="viewEnd"
-        android:layout_alignTop="@+id/secText"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_below="@+id/textView2"
         android:layout_alignLeft="@+id/textView4"
         android:layout_alignStart="@+id/textView4" />
 
@@ -70,13 +74,12 @@
         android:text="sec"
         android:id="@+id/secText"
         android:textColor="#FEEBEE"
-        android:layout_marginTop="15dp"
         android:textAlignment="viewEnd"
-        android:layout_marginLeft="6dp"
-        android:layout_marginStart="6dp"
-        android:layout_below="@+id/textView2"
+        android:layout_above="@+id/minBar"
         android:layout_toRightOf="@+id/fab"
-        android:layout_toEndOf="@+id/fab" />
+        android:layout_toEndOf="@+id/fab"
+        android:layout_marginLeft="3dp"
+        android:layout_marginStart="3dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -105,11 +108,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:src="@drawable/abc_ic_go_search_api_mtrl_alpha"
+        android:src="@drawable/abc_btn_rating_star_on_mtrl_alpha"
         android:longClickable="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:clickable="false" />
+        android:clickable="false"
+        app:backgroundTint="#D32F2F"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <SeekBar
         android:layout_width="wrap_content"

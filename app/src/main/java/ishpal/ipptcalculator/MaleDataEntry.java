@@ -8,16 +8,11 @@ import android.os.Bundle;
 //import android.support.design.widget.FloatingActionButton;
 //import android.support.design.widget.Snackbar;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 //import android.support.v7.widget.Toolbar;
 import android.view.View;
 //import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.SeekBar;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -65,8 +60,8 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
         seekbar();
 
         //This changes the color of the floating action button for future reference
-        //FloatingActionButton test = (FloatingActionButton) findViewById(R.id.fab);
-        //test.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#000000")));
+        FloatingActionButton test = (FloatingActionButton) findViewById(R.id.fab);
+        test.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#D32F2F")));
 
         if (extraBundle.isEmpty() == true){
         } else {
