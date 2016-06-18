@@ -1,6 +1,8 @@
 package ishpal.ipptcalculator;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 //import android.support.design.widget.FloatingActionButton;
@@ -61,6 +63,10 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
         sitText.setTypeface(myCustomFont8);
 
         seekbar();
+
+        //This changes the color of the floating action button for future reference
+        //FloatingActionButton test = (FloatingActionButton) findViewById(R.id.fab);
+        //test.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#000000")));
 
         if (extraBundle.isEmpty() == true){
         } else {

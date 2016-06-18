@@ -108,7 +108,8 @@
         android:src="@drawable/abc_ic_go_search_api_mtrl_alpha"
         android:longClickable="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:clickable="false" />
 
     <SeekBar
         android:layout_width="wrap_content"
@@ -120,7 +121,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:progress="1" />
+        android:progress="1"
+        android:thumb="@drawable/thumb" />
 
     <SeekBar
         android:layout_width="fill_parent"
@@ -131,7 +133,8 @@
         android:layout_marginTop="15dp"
         android:layout_below="@+id/sitText"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:thumb="@drawable/thumb"/>
 
     <SeekBar
         android:layout_width="110dp"
@@ -141,7 +144,8 @@
         android:progress="1"
         android:layout_below="@+id/minText"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:thumb="@drawable/thumb" />
 
     <SeekBar
         android:layout_width="200dp"
@@ -152,6 +156,7 @@
         android:layout_marginStart="20dp"
         android:layout_alignTop="@+id/minBar"
         android:layout_toRightOf="@+id/minBar"
-        android:layout_toEndOf="@+id/minBar" />
+        android:layout_toEndOf="@+id/minBar"
+        android:thumb="@drawable/thumb" />
 
 </RelativeLayout>
