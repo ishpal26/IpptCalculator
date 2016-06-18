@@ -173,22 +173,22 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
         pushBar.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
 
-                    public int valFromBar;
+                    public int valFromBar =0;
 
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                         valFromBar = progress;
-                        pushText.setText(valFromBar);
+                        pushText.setText(""+valFromBar);
                     }
 
                     @Override
                     public void onStartTrackingTouch(SeekBar seekBar) {
-                        pushText.setText(valFromBar);
+                        pushText.setText(""+valFromBar);
                     }
 
                     @Override
                     public void onStopTrackingTouch(SeekBar seekBar) {
-                        pushText.setText(valFromBar);
+                        pushText.setText(""+valFromBar);
                     }
                 }
         );
@@ -200,22 +200,22 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
         sitBar.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
 
-                    public int valFromBar;
+                    public int valFromBar =0;
 
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                         valFromBar = progress;
-                        sitText.setText(valFromBar);
+                        sitText.setText(""+valFromBar);
                     }
 
                     @Override
                     public void onStartTrackingTouch(SeekBar seekBar) {
-                        sitText.setText(valFromBar);
+                        sitText.setText(""+valFromBar);
                     }
 
                     @Override
                     public void onStopTrackingTouch(SeekBar seekBar) {
-                        sitText.setText(valFromBar);
+                        sitText.setText(""+valFromBar);
                     }
                 }
         );
