@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FEEBEE</color>              <!-- #3F51B5 is the original colour-->
+    <color name="colorPrimary">#B71C1C</color>              <!-- #3F51B5 is the original colour-->
     <color name="colorPrimaryDark">#B71C1C</color>          <!-- #303F9F is the original colour-->
     <color name="colorAccent">#FEEBEE</color>               <!-- #FF4081 is the original colour-->
     <color name="navigationBarColor">#B71C1C</color>
