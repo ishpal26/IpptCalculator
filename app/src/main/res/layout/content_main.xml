@@ -33,16 +33,7 @@
         android:textOff=" "
         android:textOn=" " />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Continue"
-        android:id="@+id/continueButton"
-        android:background="#FEEBEE"
-        android:textSize="14sp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-        <!-- android:typeface="NotoSans-Regular.ttf"/> -->
+    <!-- android:typeface="NotoSans-Regular.ttf"/> -->
 
     <TextView
         android:layout_width="wrap_content"
@@ -132,5 +123,15 @@
         android:layout_below="@+id/genderText"
         android:layout_centerHorizontal="true" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nextFab"
+        app:backgroundTint="#FEEBEE"
+        android:src="@drawable/abc_ic_ab_next_mtrl_am_alpha_red"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/ageSeekBar"
+        android:layout_alignRight="@+id/categoryProgress"
+        android:layout_alignEnd="@+id/categoryProgress" />
 
 </RelativeLayout>

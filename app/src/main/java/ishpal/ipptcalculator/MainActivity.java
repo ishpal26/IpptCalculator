@@ -3,6 +3,7 @@ package ishpal.ipptcalculator;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -22,7 +23,7 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {    // add in the on click listener to this class
     private Switch mySwitch, catSwitch;
     private String gender = "male", cat = "Active";
-    private Button cont;
+    private FloatingActionButton cont;
     private static SeekBar seek_bar;
     private static TextView g, a, c, cP, aP, genderText;
     @Override
@@ -63,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         genderText.setText("Male");
 
         //This is for the button
-        cont = (Button) findViewById(R.id.continueButton);
+        cont = (FloatingActionButton) findViewById(R.id.nextFab);
         cont.setOnClickListener(this);
 
         //This is for the gender switch
@@ -134,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v){
         switch (v.getId()) {
-            case R.id.continueButton:
+            case R.id.nextFab:
             if(gender.equals("male")) {
                 int age = Integer.parseInt("" + aP.getText());
 
