@@ -163,4 +163,15 @@
         android:layout_toEndOf="@+id/minBar"
         android:thumb="@drawable/thumb" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Award"
+        android:id="@+id/awardText"
+        android:textColor="#FEEBEE"
+        android:layout_below="@+id/fab"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp" />
+
 </RelativeLayout>

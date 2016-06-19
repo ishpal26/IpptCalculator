@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:switchPadding="50dp"
-        android:longClickable="true"
+        android:longClickable="true"  
         android:checked="false"
         android:clickable="false"
         android:breakStrategy="high_quality"
@@ -129,9 +129,8 @@
         android:id="@+id/nextFab"
         app:backgroundTint="#FEEBEE"
         android:src="@drawable/abc_ic_ab_next_mtrl_am_alpha_red"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="24dp"
         android:layout_below="@+id/ageSeekBar"
-        android:layout_alignRight="@+id/categoryProgress"
-        android:layout_alignEnd="@+id/categoryProgress" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

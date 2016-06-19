@@ -116,6 +116,9 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
         minBar = (SeekBar)findViewById(R.id.minBar);
         minBar.setMax(20);
         minText.setText("12" +" m");
+        final TextView awardTextView = (TextView) findViewById(R.id.awardText);
+        Typeface myCustomFont8 = Typeface.createFromAsset(getAssets(), "Fonts/Roboto-Thin.ttf");
+        awardTextView.setTypeface(myCustomFont8);
 
         minBar.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
@@ -126,16 +129,64 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                         valFromBar = progress;
                         minText.setText(valFromBar+ " m");
+
+                        //For real time feedback
+                        String[] minArr = minText.getText().toString().trim().split(" ");
+                        String[] secArr = secText.getText().toString().trim().split(" ");
+
+
+                        int runMin = Integer.parseInt(minArr[0]);
+                        int runSec = Integer.parseInt(secArr[0]);
+                        int pushReps = Integer.parseInt(pushText.getText().toString());
+                        int sitReps = Integer.parseInt(sitText.getText().toString());
+
+
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        toCheckScore.calculate();
+                        String award = toCheckScore.getAward();
+                        awardTextView.setText(award);
                     }
 
                     @Override
                     public void onStartTrackingTouch(SeekBar seekBar) {
                         minText.setText(valFromBar + " m");
+
+                        //For real time feedback
+                        String[] minArr = minText.getText().toString().trim().split(" ");
+                        String[] secArr = secText.getText().toString().trim().split(" ");
+
+
+                        int runMin = Integer.parseInt(minArr[0]);
+                        int runSec = Integer.parseInt(secArr[0]);
+                        int pushReps = Integer.parseInt(pushText.getText().toString());
+                        int sitReps = Integer.parseInt(sitText.getText().toString());
+
+
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        toCheckScore.calculate();
+                        String award = toCheckScore.getAward();
+                        awardTextView.setText(award);
                     }
 
                     @Override
                     public void onStopTrackingTouch(SeekBar seekBar) {
                         minText.setText(valFromBar + " m");
+
+                        //For real time feedback
+                        String[] minArr = minText.getText().toString().trim().split(" ");
+                        String[] secArr = secText.getText().toString().trim().split(" ");
+
+
+                        int runMin = Integer.parseInt(minArr[0]);
+                        int runSec = Integer.parseInt(secArr[0]);
+                        int pushReps = Integer.parseInt(pushText.getText().toString());
+                        int sitReps = Integer.parseInt(sitText.getText().toString());
+
+
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        toCheckScore.calculate();
+                        String award = toCheckScore.getAward();
+                        awardTextView.setText(award);
                     }
                 }
         );
@@ -153,16 +204,64 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                         valFromBar = progress;
                         secText.setText(valFromBar+ " s");
+
+                        //For real time feedback
+                        String[] minArr = minText.getText().toString().trim().split(" ");
+                        String[] secArr = secText.getText().toString().trim().split(" ");
+
+
+                        int runMin = Integer.parseInt(minArr[0]);
+                        int runSec = Integer.parseInt(secArr[0]);
+                        int pushReps = Integer.parseInt(pushText.getText().toString());
+                        int sitReps = Integer.parseInt(sitText.getText().toString());
+
+
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        toCheckScore.calculate();
+                        String award = toCheckScore.getAward();
+                        awardTextView.setText(award);
                     }
 
                     @Override
                     public void onStartTrackingTouch(SeekBar seekBar) {
                         secText.setText(valFromBar + " s");
+
+                        //For real time feedback
+                        String[] minArr = minText.getText().toString().trim().split(" ");
+                        String[] secArr = secText.getText().toString().trim().split(" ");
+
+
+                        int runMin = Integer.parseInt(minArr[0]);
+                        int runSec = Integer.parseInt(secArr[0]);
+                        int pushReps = Integer.parseInt(pushText.getText().toString());
+                        int sitReps = Integer.parseInt(sitText.getText().toString());
+
+
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        toCheckScore.calculate();
+                        String award = toCheckScore.getAward();
+                        awardTextView.setText(award);
                     }
 
                     @Override
                     public void onStopTrackingTouch(SeekBar seekBar) {
                         secText.setText(valFromBar + " s");
+
+                        //For real time feedback
+                        String[] minArr = minText.getText().toString().trim().split(" ");
+                        String[] secArr = secText.getText().toString().trim().split(" ");
+
+
+                        int runMin = Integer.parseInt(minArr[0]);
+                        int runSec = Integer.parseInt(secArr[0]);
+                        int pushReps = Integer.parseInt(pushText.getText().toString());
+                        int sitReps = Integer.parseInt(sitText.getText().toString());
+
+
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        toCheckScore.calculate();
+                        String award = toCheckScore.getAward();
+                        awardTextView.setText(award);
                     }
                 }
         );
@@ -180,16 +279,64 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                         valFromBar = progress;
                         pushText.setText(""+valFromBar);
+
+                        //For real time feedback
+                        String[] minArr = minText.getText().toString().trim().split(" ");
+                        String[] secArr = secText.getText().toString().trim().split(" ");
+
+
+                        int runMin = Integer.parseInt(minArr[0]);
+                        int runSec = Integer.parseInt(secArr[0]);
+                        int pushReps = Integer.parseInt(pushText.getText().toString());
+                        int sitReps = Integer.parseInt(sitText.getText().toString());
+
+
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        toCheckScore.calculate();
+                        String award = toCheckScore.getAward();
+                        awardTextView.setText(award);
                     }
 
                     @Override
                     public void onStartTrackingTouch(SeekBar seekBar) {
                         pushText.setText(""+valFromBar);
+
+                        //For real time feedback
+                        String[] minArr = minText.getText().toString().trim().split(" ");
+                        String[] secArr = secText.getText().toString().trim().split(" ");
+
+
+                        int runMin = Integer.parseInt(minArr[0]);
+                        int runSec = Integer.parseInt(secArr[0]);
+                        int pushReps = Integer.parseInt(pushText.getText().toString());
+                        int sitReps = Integer.parseInt(sitText.getText().toString());
+
+
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        toCheckScore.calculate();
+                        String award = toCheckScore.getAward();
+                        awardTextView.setText(award);
                     }
 
                     @Override
                     public void onStopTrackingTouch(SeekBar seekBar) {
                         pushText.setText(""+valFromBar);
+
+                        //For real time feedback
+                        String[] minArr = minText.getText().toString().trim().split(" ");
+                        String[] secArr = secText.getText().toString().trim().split(" ");
+
+
+                        int runMin = Integer.parseInt(minArr[0]);
+                        int runSec = Integer.parseInt(secArr[0]);
+                        int pushReps = Integer.parseInt(pushText.getText().toString());
+                        int sitReps = Integer.parseInt(sitText.getText().toString());
+
+
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        toCheckScore.calculate();
+                        String award = toCheckScore.getAward();
+                        awardTextView.setText(award);
                     }
                 }
         );
@@ -207,16 +354,64 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                         valFromBar = progress;
                         sitText.setText(""+valFromBar);
+
+                        //For real time feedback
+                        String[] minArr = minText.getText().toString().trim().split(" ");
+                        String[] secArr = secText.getText().toString().trim().split(" ");
+
+
+                        int runMin = Integer.parseInt(minArr[0]);
+                        int runSec = Integer.parseInt(secArr[0]);
+                        int pushReps = Integer.parseInt(pushText.getText().toString());
+                        int sitReps = Integer.parseInt(sitText.getText().toString());
+
+
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        toCheckScore.calculate();
+                        String award = toCheckScore.getAward();
+                        awardTextView.setText(award);
                     }
 
                     @Override
                     public void onStartTrackingTouch(SeekBar seekBar) {
                         sitText.setText(""+valFromBar);
+
+                        //For real time feedback
+                        String[] minArr = minText.getText().toString().trim().split(" ");
+                        String[] secArr = secText.getText().toString().trim().split(" ");
+
+
+                        int runMin = Integer.parseInt(minArr[0]);
+                        int runSec = Integer.parseInt(secArr[0]);
+                        int pushReps = Integer.parseInt(pushText.getText().toString());
+                        int sitReps = Integer.parseInt(sitText.getText().toString());
+
+
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        toCheckScore.calculate();
+                        String award = toCheckScore.getAward();
+                        awardTextView.setText(award);
                     }
 
                     @Override
                     public void onStopTrackingTouch(SeekBar seekBar) {
                         sitText.setText(""+valFromBar);
+
+                        //For real time feedback
+                        String[] minArr = minText.getText().toString().trim().split(" ");
+                        String[] secArr = secText.getText().toString().trim().split(" ");
+
+
+                        int runMin = Integer.parseInt(minArr[0]);
+                        int runSec = Integer.parseInt(secArr[0]);
+                        int pushReps = Integer.parseInt(pushText.getText().toString());
+                        int sitReps = Integer.parseInt(sitText.getText().toString());
+
+
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        toCheckScore.calculate();
+                        String award = toCheckScore.getAward();
+                        awardTextView.setText(award);
                     }
                 }
         );
