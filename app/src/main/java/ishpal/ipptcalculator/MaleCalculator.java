@@ -8,15 +8,16 @@ import java.util.Arrays;
  */
 public class MaleCalculator {
     int ageGroup, personAge, runMinutes, runSeconds, pushReps, sitReps, totalPoints = 0, pushPoints, runPoints, sitPoints;
-    String award;
+    String award, category; // cat is either nsMan or nsf(active) can adjust/set the response based on this
 
-    public MaleCalculator(int age, int runM, int runS, int pRep, int sRep) {
+    public MaleCalculator(int age, int runM, int runS, int pRep, int sRep, String cat) {
         personAge = age;
         runMinutes = runM;
         runSeconds = runS;
         pushReps = pRep;
         sitReps = sRep;
         award = "none";
+        category = cat;
     }
 
     public void calculate() {
@@ -114,9 +115,17 @@ public class MaleCalculator {
         } else if (totalPoints < 85 && totalPoints >= 75) {
             return "SILVER";
         } else if (totalPoints < 75 && totalPoints >= 61) {
-            return "PASS WITH INCENTIVE(NSMEN)" + '\n' + "PASS(NSF/ACTIVE)";
+            if (category.equals("Active")) {
+                return "PASS(NSF/ACTIVE)";
+            } else {
+                return "PASS WITH INCENTIVE(NSMEN)";
+            }
         } else if (totalPoints < 61 && totalPoints >= 51) {
-            return "PASS(NSMEN)" + '\n' + "FAIL(NSF/ACTIVE)";
+            if (category.equals("Active")) {
+                return "FAIL(NSF/ACTIVE)";
+            } else {
+                return "PASS(NSMEN)";
+            }
         } else {
             return "FAIL";
         }

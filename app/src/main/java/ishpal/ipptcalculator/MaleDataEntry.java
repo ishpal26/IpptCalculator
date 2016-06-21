@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 public class MaleDataEntry extends AppCompatActivity implements View.OnClickListener {
     int givenAge = 0;
+    String category = "";
     TextView t2, t3, t4, minText, secText, sitText, pushText;
     SeekBar minBar, secBar, pushBar, sitBar;
 
@@ -66,6 +67,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
         if (extraBundle.isEmpty() == true){
         } else {
             givenAge = extraBundle.getInt("age");
+            category = extraBundle.getString("cat");
             //just to check
             Toast.makeText(this,"Age: "+givenAge, Toast.LENGTH_SHORT).show();
         }
@@ -90,7 +92,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
 
                 Toast.makeText(this,runMin+", "+runSec+", "+pushReps+", "+sitReps, Toast.LENGTH_LONG).show();
 
-                MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps, category);
                 toCheckScore.calculate();
                 int score = toCheckScore.getPoints();
                 String award = toCheckScore.getAward();
@@ -141,7 +143,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         int sitReps = Integer.parseInt(sitText.getText().toString());
 
 
-                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps, category);
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
@@ -162,7 +164,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         int sitReps = Integer.parseInt(sitText.getText().toString());
 
 
-                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps, category);
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
@@ -183,7 +185,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         int sitReps = Integer.parseInt(sitText.getText().toString());
 
 
-                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps,category);
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
@@ -216,7 +218,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         int sitReps = Integer.parseInt(sitText.getText().toString());
 
 
-                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps, category);
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
@@ -237,7 +239,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         int sitReps = Integer.parseInt(sitText.getText().toString());
 
 
-                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps,category);
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
@@ -258,7 +260,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         int sitReps = Integer.parseInt(sitText.getText().toString());
 
 
-                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps, category);
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
@@ -291,7 +293,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         int sitReps = Integer.parseInt(sitText.getText().toString());
 
 
-                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps, category);
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
@@ -312,7 +314,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         int sitReps = Integer.parseInt(sitText.getText().toString());
 
 
-                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps, category);
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
@@ -333,7 +335,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         int sitReps = Integer.parseInt(sitText.getText().toString());
 
 
-                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps, category);
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
@@ -366,7 +368,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         int sitReps = Integer.parseInt(sitText.getText().toString());
 
 
-                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps, category);
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
@@ -387,7 +389,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         int sitReps = Integer.parseInt(sitText.getText().toString());
 
 
-                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps, category);
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
@@ -408,7 +410,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         int sitReps = Integer.parseInt(sitText.getText().toString());
 
 
-                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps);
+                        MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps, category);
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
