@@ -8,15 +8,16 @@ import java.util.Arrays;
  */
 public class FemaleCalculator {
     int ageGroup, personAge, runMinutes, runSeconds, pushReps, sitReps, totalPoints = 0, pushPoints, runPoints, sitPoints;
-    String award;
+    String award, cat;
 
-    public FemaleCalculator(int age, int runM, int runS, int pRep, int sRep) {
+    public FemaleCalculator(int age, int runM, int runS, int pRep, int sRep, String category) {
         personAge = age;
         runMinutes = runM;
         runSeconds = runS;
         pushReps = pRep;
         sitReps = sRep;
         award = "none";
+        cat = category;
     }
 
     public void calculate() {
@@ -120,6 +121,18 @@ public class FemaleCalculator {
 
     public int getPoints() {
         return totalPoints;
+    }
+
+    public int getSitUpPoints() {
+        return sitPoints;
+    }
+
+    public int getRunPoints() {
+        return runPoints;
+    }
+
+    public int getPushUpPoints() {
+        return pushPoints;
     }
 
     public String getAward() {
