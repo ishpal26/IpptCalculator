@@ -10,96 +10,168 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="ishpal.ipptcalculator.FemaleDataEntry"
-    tools:showIn="@layout/activity_female_data_entry">
+    tools:showIn="@layout/activity_female_data_entry"
+    android:gravity="end"
+    android:background="#D32F2F">
 
-    <EditText
-        android:layout_width="70dp"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/mins"
-        android:text=" min"
-        android:layout_marginTop="27dp"
-        android:textAlignment="textEnd"
-        android:layout_alignParentTop="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="2.4"
+        android:id="@+id/female_textView2"
+        android:textColor="#FEEBEE"
+        android:textSize="65dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_below="@+id/female_fab"
+        android:layout_toRightOf="@+id/female_minBar"
+        android:layout_toEndOf="@+id/female_minBar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="SIT UPS"
+        android:id="@+id/female_textView3"
+        android:textColor="#FEEBEE"
+        android:textSize="65dp"
+        android:layout_below="@+id/female_minBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="PUSH UPS"
+        android:id="@+id/female_textView4"
+        android:textColor="#FEEBEE"
+        android:layout_marginTop="17dp"
+        android:textSize="65dp"
+        android:layout_below="@+id/female_sitBar"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="min"
+        android:id="@+id/female_minText"
+        android:textColor="#FEEBEE"
+        android:textAlignment="viewEnd"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_below="@+id/female_textView2"
+        android:layout_alignLeft="@+id/female_textView4"
+        android:layout_alignStart="@+id/female_textView4" />
+
+    <TextView
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="sec"
+        android:id="@+id/female_secText"
+        android:textColor="#FEEBEE"
+        android:textAlignment="viewEnd"
+        android:layout_above="@+id/female_minBar"
+        android:layout_toRightOf="@+id/female_fab"
+        android:layout_toEndOf="@+id/female_fab"
+        android:layout_marginLeft="3dp"
+        android:layout_marginStart="3dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="reps"
+        android:id="@+id/female_sitText"
+        android:textColor="#FEEBEE"
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/female_textView3"
         android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="2.4 Running"
-        android:id="@+id/textView2"
-        android:layout_alignTop="@+id/mins"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Reps"
+        android:id="@+id/female_pushText"
+        android:textColor="#FEEBEE"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/female_textView4"
+        android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:layout_width="70dp"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/female_fab"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editText2"
-        android:text=" sec"
-        android:textAlignment="textEnd"
-        android:layout_alignTop="@+id/mins"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/abc_btn_rating_star_on_mtrl_alpha"
+        android:longClickable="true"
+        android:clickable="false"
+        app:backgroundTint="#D32F2F"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/female_pushBar"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/female_pushText"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="32dp"
-        android:layout_marginEnd="32dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Sit Ups"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/mins"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="76dp" />
+        android:progress="1"
+        android:thumb="@drawable/thumb" />
 
-    <EditText
-        android:layout_width="70dp"
+    <SeekBar
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/sitUpReps"
-        android:text=" reps"
-        android:textAlignment="textEnd"
-        android:layout_alignTop="@+id/textView3"
-        android:layout_alignLeft="@+id/mins"
-        android:layout_alignStart="@+id/mins" />
+        android:id="@+id/female_sitBar"
+        android:progress="1"
+        android:indeterminate="false"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/female_sitText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:thumb="@drawable/thumb"/>
+
+    <SeekBar
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/female_minBar"
+        android:layout_marginTop="7dp"
+        android:progress="1"
+        android:layout_below="@+id/female_minText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:thumb="@drawable/thumb" />
+
+    <SeekBar
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/female_secBar"
+        android:progress="1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_alignTop="@+id/female_minBar"
+        android:layout_toRightOf="@+id/female_minBar"
+        android:layout_toEndOf="@+id/female_minBar"
+        android:thumb="@drawable/thumb" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Push Ups"
-        android:id="@+id/textView4"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/pushUpReps"
-        android:text=" reps"
-        android:textAlignment="textEnd"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/sitUpReps"
-        android:layout_alignStart="@+id/sitUpReps" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Calculate"
-        android:id="@+id/button"
-        android:layout_below="@+id/pushUpReps"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Award"
+        android:id="@+id/female_awardText"
+        android:textColor="#FEEBEE"
+        android:layout_below="@+id/female_fab"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="95dp" />
+        android:layout_marginTop="4dp" />
 
 </RelativeLayout>
