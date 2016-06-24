@@ -9,64 +9,69 @@ import java.util.ArrayList;
  */
 public class FemaleScores {
 
-    public static final List<List<Integer>> pushUpScores = new ArrayList<List<Integer>>() {
-        {
-            pushUpScores.add(Arrays.asList(50, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(49, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(48, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(47, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(46, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(45, 24, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(44, 23, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(43, 23, 23, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(42, 23, 23, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(41, 23, 23, 23, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(40, 22, 23, 23, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(39, 22, 22, 23, 23, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(38, 22, 22, 23, 23, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(37, 22, 22, 22, 23, 23, 24, 24, 25, 25, 25, 25, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(36, 21, 22, 22, 23, 23, 24, 24, 25, 25, 25, 25, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(35, 21, 21, 22, 22, 23, 23, 24, 24, 25, 25, 25, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(34, 21, 21, 22, 22, 23, 23, 24, 24, 25, 25, 25, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(33, 21, 21, 21, 22, 22, 23, 23, 24, 24, 25, 25, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(32, 20, 21, 21, 22, 22, 23, 23, 23, 24, 25, 25, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(31, 20, 20, 21, 21, 21, 22, 22, 23, 23, 24, 24, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(30, 20, 20, 21, 21, 22, 22, 22, 23, 23, 24, 25, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(29, 20, 20, 20, 21, 21, 22, 22, 22, 23, 24, 25, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(28, 20, 20, 20, 21, 21, 21, 22, 22, 23, 23, 24, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(27, 19, 20, 20, 20, 21, 21, 21, 22, 22, 23, 24, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(26, 19, 19, 20, 20, 20, 21, 21, 21, 22, 23, 24, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(25, 19, 19, 19, 20, 20, 20, 21, 21, 22, 22, 23, 25, 25, 25));
-            pushUpScores.add(Arrays.asList(24, 18, 19, 19, 19, 20, 20, 20, 21, 21, 22, 23, 24, 25, 25));
-            pushUpScores.add(Arrays.asList(23, 18, 18, 19, 19, 19, 20, 20, 20, 21, 22, 23, 24, 24, 25));
-            pushUpScores.add(Arrays.asList(22, 18, 18, 18, 19, 191, 9, 20, 20, 21, 21, 22, 23, 24, 25));
-            pushUpScores.add(Arrays.asList(21, 17, 18, 18, 18, 19, 19, 19, 20, 20, 21, 22, 23, 23, 24));
-            pushUpScores.add(Arrays.asList(20, 16, 17, 18, 18, 18, 19, 19, 19, 20, 21, 22, 22, 23, 23));
-            pushUpScores.add(Arrays.asList(19, 15, 16, 17, 18, 18, 18, 19, 19, 20, 20, 21, 22, 22, 23));
-            pushUpScores.add(Arrays.asList(18, 15, 15, 16, 17, 18, 18, 18, 19, 19, 20, 21, 21, 22, 22));
-            pushUpScores.add(Arrays.asList(17, 10, 15, 15, 16, 17, 18, 18, 18, 19, 20, 20, 21, 21, 22));
-            pushUpScores.add(Arrays.asList(16, 5, 10, 15, 15, 16, 17, 18, 18, 19, 19, 20, 20, 21, 21));
-            pushUpScores.add(Arrays.asList(15, 1, 5, 10, 15, 15, 16, 17, 18, 18, 19, 19, 20, 20, 21));
-            pushUpScores.add(Arrays.asList(14, 0, 1, 5, 10, 15, 15, 16, 17, 18, 18, 19, 19, 20, 20));
-            pushUpScores.add(Arrays.asList(13, 0, 0, 1, 5, 10, 15, 15, 16, 17, 18, 18, 19, 19, 20));
-            pushUpScores.add(Arrays.asList(12, 0, 0, 0, 1, 5, 10, 15, 15, 16, 17, 18, 18, 19, 19));
-            pushUpScores.add(Arrays.asList(11, 0, 0, 0, 0, 1, 5, 10, 15, 15, 16, 17, 18, 18, 19));
-            pushUpScores.add(Arrays.asList(10, 0, 0, 0, 0, 0, 1, 5, 10, 15, 15, 16, 17, 18, 18));
-            pushUpScores.add(Arrays.asList(9, 0, 0, 0, 0, 0, 0, 1, 5, 10, 15, 15, 16, 17, 18));
-            pushUpScores.add(Arrays.asList(8, 0, 0, 0, 0, 0, 0, 0, 1, 5, 10, 15, 15, 16, 17));
-            pushUpScores.add(Arrays.asList(7, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5, 10, 15, 15, 16));
-            pushUpScores.add(Arrays.asList(6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5, 10, 15, 15));
-            pushUpScores.add(Arrays.asList(5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5, 10, 15));
-            pushUpScores.add(Arrays.asList(4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5, 10));
-            pushUpScores.add(Arrays.asList(3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5));
-            pushUpScores.add(Arrays.asList(2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1));
-            pushUpScores.add(Arrays.asList(1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
-        }
-    };
+    public static List<List<Integer>> pushUpScores;
+    public static List<List<Integer>> sitUpScores;
+    public static List<List<Integer>> runningScores;
+
+    FemaleScores() {
+        initialize();
+    }
+
+    public void initialize() {
+        pushUpScores = new ArrayList<List<Integer>>();
+        pushUpScores.add(Arrays.asList(50, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(49, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(48, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(47, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(46, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(45, 24, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(44, 23, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(43, 23, 23, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(42, 23, 23, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(41, 23, 23, 23, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(40, 22, 23, 23, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(39, 22, 22, 23, 23, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(38, 22, 22, 23, 23, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(37, 22, 22, 22, 23, 23, 24, 24, 25, 25, 25, 25, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(36, 21, 22, 22, 23, 23, 24, 24, 25, 25, 25, 25, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(35, 21, 21, 22, 22, 23, 23, 24, 24, 25, 25, 25, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(34, 21, 21, 22, 22, 23, 23, 24, 24, 25, 25, 25, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(33, 21, 21, 21, 22, 22, 23, 23, 24, 24, 25, 25, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(32, 20, 21, 21, 22, 22, 23, 23, 23, 24, 25, 25, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(31, 20, 20, 21, 21, 21, 22, 22, 23, 23, 24, 24, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(30, 20, 20, 21, 21, 22, 22, 22, 23, 23, 24, 25, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(29, 20, 20, 20, 21, 21, 22, 22, 22, 23, 24, 25, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(28, 20, 20, 20, 21, 21, 21, 22, 22, 23, 23, 24, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(27, 19, 20, 20, 20, 21, 21, 21, 22, 22, 23, 24, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(26, 19, 19, 20, 20, 20, 21, 21, 21, 22, 23, 24, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(25, 19, 19, 19, 20, 20, 20, 21, 21, 22, 22, 23, 25, 25, 25));
+        pushUpScores.add(Arrays.asList(24, 18, 19, 19, 19, 20, 20, 20, 21, 21, 22, 23, 24, 25, 25));
+        pushUpScores.add(Arrays.asList(23, 18, 18, 19, 19, 19, 20, 20, 20, 21, 22, 23, 24, 24, 25));
+        pushUpScores.add(Arrays.asList(22, 18, 18, 18, 19, 191, 9, 20, 20, 21, 21, 22, 23, 24, 25));
+        pushUpScores.add(Arrays.asList(21, 17, 18, 18, 18, 19, 19, 19, 20, 20, 21, 22, 23, 23, 24));
+        pushUpScores.add(Arrays.asList(20, 16, 17, 18, 18, 18, 19, 19, 19, 20, 21, 22, 22, 23, 23));
+        pushUpScores.add(Arrays.asList(19, 15, 16, 17, 18, 18, 18, 19, 19, 20, 20, 21, 22, 22, 23));
+        pushUpScores.add(Arrays.asList(18, 15, 15, 16, 17, 18, 18, 18, 19, 19, 20, 21, 21, 22, 22));
+        pushUpScores.add(Arrays.asList(17, 10, 15, 15, 16, 17, 18, 18, 18, 19, 20, 20, 21, 21, 22));
+        pushUpScores.add(Arrays.asList(16, 5, 10, 15, 15, 16, 17, 18, 18, 19, 19, 20, 20, 21, 21));
+        pushUpScores.add(Arrays.asList(15, 1, 5, 10, 15, 15, 16, 17, 18, 18, 19, 19, 20, 20, 21));
+        pushUpScores.add(Arrays.asList(14, 0, 1, 5, 10, 15, 15, 16, 17, 18, 18, 19, 19, 20, 20));
+        pushUpScores.add(Arrays.asList(13, 0, 0, 1, 5, 10, 15, 15, 16, 17, 18, 18, 19, 19, 20));
+        pushUpScores.add(Arrays.asList(12, 0, 0, 0, 1, 5, 10, 15, 15, 16, 17, 18, 18, 19, 19));
+        pushUpScores.add(Arrays.asList(11, 0, 0, 0, 0, 1, 5, 10, 15, 15, 16, 17, 18, 18, 19));
+        pushUpScores.add(Arrays.asList(10, 0, 0, 0, 0, 0, 1, 5, 10, 15, 15, 16, 17, 18, 18));
+        pushUpScores.add(Arrays.asList(9, 0, 0, 0, 0, 0, 0, 1, 5, 10, 15, 15, 16, 17, 18));
+        pushUpScores.add(Arrays.asList(8, 0, 0, 0, 0, 0, 0, 0, 1, 5, 10, 15, 15, 16, 17));
+        pushUpScores.add(Arrays.asList(7, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5, 10, 15, 15, 16));
+        pushUpScores.add(Arrays.asList(6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5, 10, 15, 15));
+        pushUpScores.add(Arrays.asList(5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5, 10, 15));
+        pushUpScores.add(Arrays.asList(4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5, 10));
+        pushUpScores.add(Arrays.asList(3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5));
+        pushUpScores.add(Arrays.asList(2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1));
+        pushUpScores.add(Arrays.asList(1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
 
 
-    public static final List<List<Integer>> sitUpScores = new ArrayList<List<Integer>>() {{
-//TODO change values
+        sitUpScores = new ArrayList<List<Integer>>();
         sitUpScores.add(Arrays.asList(52, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25));
         sitUpScores.add(Arrays.asList(51, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25));
         sitUpScores.add(Arrays.asList(50, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25));
@@ -119,9 +124,8 @@ public class FemaleScores {
         sitUpScores.add(Arrays.asList(3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2));
         sitUpScores.add(Arrays.asList(2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1));
         sitUpScores.add(Arrays.asList(1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
-    }};
 
-    public static final List<List<Integer>> runningScores = new ArrayList<List<Integer>>() {{
+        runningScores = new ArrayList<List<Integer>>();
         //TODO
         runningScores.add(Arrays.asList(600, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50));
         runningScores.add(Arrays.asList(610, 49, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50));
@@ -197,5 +201,5 @@ public class FemaleScores {
         runningScores.add(Arrays.asList(1310, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 4));
         runningScores.add(Arrays.asList(1320, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2));
         runningScores.add(Arrays.asList(1330, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1));
-    }};
+    }
 }
