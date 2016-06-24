@@ -147,6 +147,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
 
                     @Override
@@ -168,6 +169,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
 
                     @Override
@@ -189,6 +191,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
                 }
         );
@@ -222,6 +225,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
 
                     @Override
@@ -243,6 +247,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
 
                     @Override
@@ -264,6 +269,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
                 }
         );
@@ -297,6 +303,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
 
                     @Override
@@ -318,6 +325,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
 
                     @Override
@@ -339,6 +347,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
                 }
         );
@@ -372,6 +381,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
 
                     @Override
@@ -393,6 +403,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
 
                     @Override
@@ -414,9 +425,29 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
                 }
         );
 
+    }
+
+    public void setColor(String currentAward) {
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+        switch(currentAward) {
+
+            case "GOLD":                            fab.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFD600")));
+                                                    break;
+            case "GOLD(COMMANDO/GUARDS/DIVERS)":    fab.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFD600")));
+                                                    break;
+            case "SILVER":                          fab.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#E0E0E0")));
+                                                    break;
+            case "FAIL":                            fab.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#424242")));
+                                                    break;
+            default:                                fab.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FEEBEE")));
+                                                    break;
+        }
     }
 }
