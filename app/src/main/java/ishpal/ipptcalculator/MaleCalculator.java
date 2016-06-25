@@ -107,27 +107,27 @@ public class MaleCalculator {
 
     private String determineAward() {
         if (totalPoints > 100) {
-            return "ERROR";
+            return "Error";
         } else if (totalPoints >= 90) {
-            return "GOLD(COMMANDO/GUARDS/DIVERS)";
+            return "Commando Gold";
         } else if (totalPoints < 90 && totalPoints >= 85) {
-            return "GOLD";
+            return "Gold";
         } else if (totalPoints < 85 && totalPoints >= 75) {
-            return "SILVER";
+            return "Silver";
         } else if (totalPoints < 75 && totalPoints >= 61) {
             if (category.equals("Active")) {
-                return "PASS(NSF/ACTIVE)";
+                return "Pass";
             } else {
-                return "PASS WITH INCENTIVE(NSMEN)";
+                return "Pass with Incentive";
             }
         } else if (totalPoints < 61 && totalPoints >= 51) {
             if (category.equals("Active")) {
-                return "FAIL(NSF/ACTIVE)";
+                return "Fail";
             } else {
-                return "PASS(NSMEN)";
+                return "Pass";
             }
         } else {
-            return "FAIL";
+            return "Fail";
         }
     }
 
