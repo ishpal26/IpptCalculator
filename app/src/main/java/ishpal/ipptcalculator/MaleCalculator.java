@@ -1,5 +1,7 @@
 package ishpal.ipptcalculator;
 
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -55,7 +57,7 @@ public class MaleCalculator {
     }
 
     private int calculateScore(int group) {
-        int colToRetrieve = group + 1;
+        int colToRetrieve = group;
         int userTime = getSeconds(runMinutes, runSeconds);
         int totalScore = 0;
         int pushCheck=0;
@@ -154,5 +156,5 @@ public class MaleCalculator {
     public String getAward() {
         return award;
     }
-
+    public int getAgeGroup() {return ageGroup;}
 }

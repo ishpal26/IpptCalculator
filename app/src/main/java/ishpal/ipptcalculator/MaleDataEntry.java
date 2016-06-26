@@ -102,7 +102,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                     toast.show();
 
                     //FOR TESTING DONT REMOVE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                    Toast test = Toast.makeText(this,""+ toCheckScore.getRunPoints()+"\n"+toCheckScore.getPushUpPoints()+"\n"+toCheckScore.getSitUpPoints(),Toast.LENGTH_LONG);
+                    Toast test = Toast.makeText(this,""+toCheckScore.getAgeGroup()+"\n"+toCheckScore.getRunPoints()+"\n"+toCheckScore.getSitUpPoints()+"\n"+toCheckScore.getPushUpPoints(),Toast.LENGTH_LONG);
                     test.show();
                 } else {
                     Toast toast = Toast.makeText(this, "Your Points: " + score + "\nGold (>84 points)\nSilver (>74 points)\nPass with Incentive (>60 points)\nPass (>50 points)\n", Toast.LENGTH_LONG);
@@ -111,7 +111,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                     toast.setGravity(Gravity.TOP,0,0);
                     toast.show();
                     //FOR TESTING DONT REMOVE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                    Toast test = Toast.makeText(this,""+ toCheckScore.getRunPoints()+"\n"+toCheckScore.getPushUpPoints()+"\n"+toCheckScore.getSitUpPoints(),Toast.LENGTH_LONG);
+                    Toast test = Toast.makeText(this,""+toCheckScore.getAgeGroup()+"\n"+ toCheckScore.getRunPoints()+"\n"+toCheckScore.getSitUpPoints()+"\n"+toCheckScore.getPushUpPoints(),Toast.LENGTH_LONG);
                     test.show();
                 }
 
