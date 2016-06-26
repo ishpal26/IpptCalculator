@@ -101,12 +101,18 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                     toast.setGravity(Gravity.TOP,0,0);
                     toast.show();
 
+                    //FOR TESTING DONT REMOVE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    Toast test = Toast.makeText(this,""+ toCheckScore.getRunPoints()+"\n"+toCheckScore.getPushUpPoints()+"\n"+toCheckScore.getSitUpPoints(),Toast.LENGTH_LONG);
+                    test.show();
                 } else {
                     Toast toast = Toast.makeText(this, "Your Points: " + score + "\nGold (>84 points)\nSilver (>74 points)\nPass with Incentive (>60 points)\nPass (>50 points)\n", Toast.LENGTH_LONG);
                     TextView toastText = (TextView) toast.getView().findViewById(android.R.id.message);
                     if( toastText != null) toastText.setGravity(Gravity.CENTER);
                     toast.setGravity(Gravity.TOP,0,0);
                     toast.show();
+                    //FOR TESTING DONT REMOVE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    Toast test = Toast.makeText(this,""+ toCheckScore.getRunPoints()+"\n"+toCheckScore.getPushUpPoints()+"\n"+toCheckScore.getSitUpPoints(),Toast.LENGTH_LONG);
+                    test.show();
                 }
 
                 /*String award = toCheckScore.getAward();
