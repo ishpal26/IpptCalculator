@@ -1,6 +1,8 @@
 package ishpal.ipptcalculator;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -96,16 +98,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         catSwitch.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
             @Override
-            public void onCheckedChanged(CompoundButton buttonView,
-                                         boolean isChecked) {
-                if(isChecked){
-                    cat = "NSman";
-                    cP.setText(""+ "NSman");
-                }else{
-                    cat = "Active";
-                    cP.setText(""+ "Active");
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked && gender == "male") {
+                        cat = "NSman";
+                        cP.setText("" + "NSman");
+                } else if(isChecked && gender == "female"){
+                        cat = "Active";
+                        catSwitch.setChecked(false);
+                        cP.setText("" + "Active");
+                } else {
+                        cat = "Active";
+                        cP.setText("" + "Active");
                 }
-
             }
         });
     }
