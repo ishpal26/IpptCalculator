@@ -89,7 +89,7 @@ public class FemaleDataEntry extends AppCompatActivity implements View.OnClickLi
                 int pushReps = Integer.parseInt(pushText.getText().toString());
                 int sitReps = Integer.parseInt(sitText.getText().toString());
 
-                MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps, category);
+                FemaleCalculator toCheckScore = new FemaleCalculator(givenAge, runMin, runSec, pushReps, sitReps, category);
                 toCheckScore.calculate();
                 int score = toCheckScore.getPoints();
                 if(category.equals("Active")) {
