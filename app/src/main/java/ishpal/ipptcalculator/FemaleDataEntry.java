@@ -9,6 +9,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -88,12 +89,25 @@ public class FemaleDataEntry extends AppCompatActivity implements View.OnClickLi
                 int pushReps = Integer.parseInt(pushText.getText().toString());
                 int sitReps = Integer.parseInt(sitText.getText().toString());
 
-                Toast.makeText(this,runMin+", "+runSec+", "+pushReps+", "+sitReps, Toast.LENGTH_LONG).show();
-
-                FemaleCalculator toCheckScore = new FemaleCalculator(givenAge, runMin, runSec, pushReps, sitReps, category);
+                MaleCalculator toCheckScore = new MaleCalculator(givenAge, runMin, runSec, pushReps, sitReps, category);
                 toCheckScore.calculate();
                 int score = toCheckScore.getPoints();
-                String award = toCheckScore.getAward();
+                if(category.equals("Active")) {
+                    Toast toast = Toast.makeText(this, "Your Points: " + score + "\nCommando Gold (>90 points)\nGold (>84 points)\nSilver (>74 points)\nPass (>60 points)", Toast.LENGTH_SHORT);
+                    TextView toastText = (TextView) toast.getView().findViewById(android.R.id.message);
+                    if( toastText != null) toastText.setGravity(Gravity.CENTER);
+                    toast.setGravity(Gravity.TOP,0,0);
+                    toast.show();
+
+                } else {
+                    Toast toast = Toast.makeText(this, "Your Points: " + score + "\nGold (>84 points)\nSilver (>74 points)\nPass with Incentive (>60 points)\nPass (>50 points)\n", Toast.LENGTH_LONG);
+                    TextView toastText = (TextView) toast.getView().findViewById(android.R.id.message);
+                    if( toastText != null) toastText.setGravity(Gravity.CENTER);
+                    toast.setGravity(Gravity.TOP,0,0);
+                    toast.show();
+                }
+
+                /*String award = toCheckScore.getAward();
 
                 if(award.contains("error")){
                     Toast.makeText(this,"Error with data, please input your data correctly", Toast.LENGTH_LONG).show();
@@ -108,7 +122,7 @@ public class FemaleDataEntry extends AppCompatActivity implements View.OnClickLi
                     bundle.putInt("runscore", toCheckScore.getRunPoints());
                     intentBundle.putExtras(bundle);
                     startActivity(intentBundle); // we now launch the male data entry page
-                }
+                }*/
         }
     }
 
@@ -146,6 +160,7 @@ public class FemaleDataEntry extends AppCompatActivity implements View.OnClickLi
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
 
                     @Override
@@ -167,6 +182,7 @@ public class FemaleDataEntry extends AppCompatActivity implements View.OnClickLi
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
 
                     @Override
@@ -188,6 +204,7 @@ public class FemaleDataEntry extends AppCompatActivity implements View.OnClickLi
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
                 }
         );
@@ -221,6 +238,7 @@ public class FemaleDataEntry extends AppCompatActivity implements View.OnClickLi
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
 
                     @Override
@@ -242,6 +260,7 @@ public class FemaleDataEntry extends AppCompatActivity implements View.OnClickLi
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
 
                     @Override
@@ -263,6 +282,7 @@ public class FemaleDataEntry extends AppCompatActivity implements View.OnClickLi
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
                 }
         );
@@ -296,6 +316,7 @@ public class FemaleDataEntry extends AppCompatActivity implements View.OnClickLi
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
 
                     @Override
@@ -317,6 +338,7 @@ public class FemaleDataEntry extends AppCompatActivity implements View.OnClickLi
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
 
                     @Override
@@ -338,6 +360,7 @@ public class FemaleDataEntry extends AppCompatActivity implements View.OnClickLi
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
                 }
         );
@@ -371,6 +394,7 @@ public class FemaleDataEntry extends AppCompatActivity implements View.OnClickLi
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
 
                     @Override
@@ -392,6 +416,7 @@ public class FemaleDataEntry extends AppCompatActivity implements View.OnClickLi
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
 
                     @Override
@@ -413,10 +438,32 @@ public class FemaleDataEntry extends AppCompatActivity implements View.OnClickLi
                         toCheckScore.calculate();
                         String award = toCheckScore.getAward();
                         awardTextView.setText(award);
+                        setColor(award);
                     }
                 }
         );
 
+    }
+
+    public void setColor(String currentAward) {
+
+        FloatingActionButton female_fab = (FloatingActionButton) findViewById(R.id.female_fab);
+
+        switch(currentAward) {
+
+            case "Gold":                                            female_fab.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFD600")));
+                break;
+            case "Commando Gold":                                   female_fab.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFD600")));
+                break;
+            case "Silver":                                          female_fab.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#BDBDBD")));
+                break;
+            case "Fail":                                            female_fab.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#424242")));
+                break;
+            case "Pass":                                            female_fab.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#8BC34A")));
+                break;
+            default:                                                female_fab.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FEEBEE")));
+                break;
+        }
     }
 
 }

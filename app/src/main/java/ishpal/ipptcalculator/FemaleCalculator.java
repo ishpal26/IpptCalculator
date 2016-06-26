@@ -101,17 +101,17 @@ public class FemaleCalculator {
 
     private String determineAward() {
         if (totalPoints > 100) {
-            return "ERROR";
+            return "Error";
         } else if (totalPoints >= 90) {
-            return "GOLD(COMMANDO/GUARDS/DIVERS)";
+            return "Commando Gold";
         } else if (totalPoints < 90 && totalPoints >= 85) {
-            return "GOLD";
+            return "Gold";
         } else if (totalPoints < 85 && totalPoints >= 75) {
-            return "SILVER";
+            return "Silver";
         } else if (totalPoints < 75 && totalPoints >= 51) {
-            return "PASS";
+            return "Pass";
         } else {
-            return "FAIL";
+            return "Fail";
         }
     }
 
