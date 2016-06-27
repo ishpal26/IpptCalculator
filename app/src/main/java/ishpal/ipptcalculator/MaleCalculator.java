@@ -108,6 +108,10 @@ public class MaleCalculator {
     }
 
     private String determineAward() {
+        if(pushPoints == 0 || sitPoints == 0 || runPoints ==0){
+            return "Fail";
+        }
+
         if (totalPoints > 100) {
             return "Error";
         } else if (totalPoints >= 90) {
