@@ -55,17 +55,19 @@ public class FemaleCalculator {
     }
 
     private int calculateScore(int group) {
-        int colToRetrieve = group + 1;
+        int colToRetrieve = group;
         int userTime = getSeconds(runMinutes, runSeconds);
         int totalScore = 0;
         int pushCheck=0;
         int sitCheck=0;
 
-        FemaleScores scores = new FemaleScores();
+        MaleScores scores = new MaleScores();
 
         for (int i = 0; i < scores.pushUpScores.size(); i++) {
             if (pushReps == (scores.pushUpScores.get(i).get(0))) {
                 totalScore += scores.pushUpScores.get(i).get(colToRetrieve);
+                pushPoints = scores.pushUpScores.get(i).get(colToRetrieve);
+                pushCheck=1;
                 break;
             }
         }
@@ -73,9 +75,12 @@ public class FemaleCalculator {
             pushPoints=25;
             totalScore+=25;
         }
+
         for (int i = 0; i < scores.sitUpScores.size(); i++) {
-            if (pushReps == (scores.sitUpScores.get(i).get(0))) {
+            if (sitReps == (scores.sitUpScores.get(i).get(0))) {
                 totalScore += scores.sitUpScores.get(i).get(colToRetrieve);
+                sitPoints = scores.sitUpScores.get(i).get(colToRetrieve);
+                sitCheck=1;
                 break;
             }
         }
@@ -83,14 +88,15 @@ public class FemaleCalculator {
             sitPoints=25;
             totalScore+=25;
         }
+        //Check if below the CDO GOLD
         if (userTime <= scores.runningScores.get(0).get(0)) {
             totalScore += scores.runningScores.get(0).get(1);
+            runPoints = scores.runningScores.get(0).get(1);
             return totalScore;
         }
-
+        //Not better than CDO GOLD so check the table for points
         for (int i = 1; i < scores.runningScores.size() - 1; i++) {
-
-            if (scores.runningScores.get(i).get(0)  <= userTime && userTime < scores.runningScores.get(i + 1).get(0)) {
+            if (scores.runningScores.get(i).get(0) <= userTime && userTime < scores.runningScores.get(i + 1).get(0)) {
                 totalScore += scores.runningScores.get(i).get(colToRetrieve);
                 runPoints = scores.runningScores.get(i).get(colToRetrieve);
                 break;
@@ -100,6 +106,10 @@ public class FemaleCalculator {
     }
 
     private String determineAward() {
+        if(pushPoints == 0 || sitPoints == 0 || runPoints ==0){
+            return "Fail";
+        }
+
         if (totalPoints > 100) {
             return "Error";
         } else if (totalPoints >= 90) {
@@ -134,6 +144,8 @@ public class FemaleCalculator {
     public int getPushUpPoints() {
         return pushPoints;
     }
+
+    public int getAgeGroup(){ return ageGroup;}
 
     public String getAward() {
         return award;
