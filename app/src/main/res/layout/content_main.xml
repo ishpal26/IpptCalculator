@@ -110,7 +110,12 @@
         android:checked="false"
         android:layout_below="@+id/categoryProgress"
         android:layout_alignLeft="@+id/mySwitch"
-        android:layout_alignStart="@+id/mySwitch" />
+        android:layout_alignStart="@+id/mySwitch"
+        android:clickable="false"
+        android:breakStrategy="high_quality"
+        android:longClickable="true"
+        android:showText="false"
+        android:switchPadding="50dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -129,7 +134,7 @@
         android:id="@+id/nextFab"
         app:backgroundTint="#FEEBEE"
         android:src="@drawable/abc_ic_ab_next_mtrl_am_alpha_red"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/ageSeekBar"
         android:layout_centerHorizontal="true" />
 

@@ -54,7 +54,7 @@
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:layout_width="40dp"
+        android:layout_width="45dp"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="min"
@@ -65,7 +65,8 @@
         android:layout_marginStart="15dp"
         android:layout_below="@+id/female_textView2"
         android:layout_alignLeft="@+id/female_textView4"
-        android:layout_alignStart="@+id/female_textView4" />
+        android:layout_alignStart="@+id/female_textView4"
+        android:textSize="14dp" />
 
     <TextView
         android:layout_width="40dp"
@@ -79,7 +80,8 @@
         android:layout_toRightOf="@+id/female_fab"
         android:layout_toEndOf="@+id/female_fab"
         android:layout_marginLeft="3dp"
-        android:layout_marginStart="3dp" />
+        android:layout_marginStart="3dp"
+        android:textSize="14dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -90,7 +92,8 @@
         android:textColor="#FEEBEE"
         android:layout_marginTop="13dp"
         android:layout_below="@+id/female_textView3"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textSize="14dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -101,7 +104,8 @@
         android:textColor="#FEEBEE"
         android:layout_marginTop="8dp"
         android:layout_below="@+id/female_textView4"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textSize="14dp" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/female_fab"
