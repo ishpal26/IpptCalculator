@@ -82,6 +82,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(isChecked){
                     gender = "female";
                     genderText.setText("Female");
+                    cat = "Active";
+                    catSwitch.setChecked(false);
+                    cP.setText("" + "Active");
+
                 }else{
                     gender = "male";
                     genderText.setText("Male");
