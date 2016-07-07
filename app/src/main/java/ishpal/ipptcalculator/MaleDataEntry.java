@@ -70,7 +70,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
             givenAge = extraBundle.getInt("age");
             category = extraBundle.getString("cat");
             //just to check
-            Toast.makeText(this,"Age: "+givenAge, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this,"Age: "+givenAge, Toast.LENGTH_SHORT).show();
         }
 
 
@@ -103,7 +103,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
 
                     //FOR TESTING DONT REMOVE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                     Toast test = Toast.makeText(this,""+toCheckScore.getAgeGroup()+"\n"+toCheckScore.getRunPoints()+"\n"+toCheckScore.getSitUpPoints()+"\n"+toCheckScore.getPushUpPoints(),Toast.LENGTH_LONG);
-                    test.show();
+                    //test.show();
                 } else {
                     Toast toast = Toast.makeText(this, "Your Points: " + score + "\nGold (≥85 points)\nSilver (≥75 points)\nPass with Incentive (≥61 points)\nPass (≥51 points)\n", Toast.LENGTH_LONG);
                     TextView toastText = (TextView) toast.getView().findViewById(android.R.id.message);
@@ -112,7 +112,7 @@ public class MaleDataEntry extends AppCompatActivity implements View.OnClickList
                     toast.show();
                     //FOR TESTING DONT REMOVE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                     Toast test = Toast.makeText(this,""+toCheckScore.getAgeGroup()+"\n"+ toCheckScore.getRunPoints()+"\n"+toCheckScore.getSitUpPoints()+"\n"+toCheckScore.getPushUpPoints(),Toast.LENGTH_LONG);
-                    test.show();
+                    //test.show();
                 }
 
                 /*String award = toCheckScore.getAward();

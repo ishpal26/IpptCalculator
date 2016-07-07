@@ -61,7 +61,7 @@ public class FemaleCalculator {
         int pushCheck=0;
         int sitCheck=0;
 
-        MaleScores scores = new MaleScores();
+        FemaleScores scores = new FemaleScores();
 
         for (int i = 0; i < scores.pushUpScores.size(); i++) {
             if (pushReps == (scores.pushUpScores.get(i).get(0))) {
@@ -71,7 +71,7 @@ public class FemaleCalculator {
                 break;
             }
         }
-        if(pushReps>60 && pushCheck==0) {
+        if(pushReps>50 && pushCheck==0) {
             pushPoints=25;
             totalScore+=25;
         }
@@ -84,7 +84,7 @@ public class FemaleCalculator {
                 break;
             }
         }
-        if(sitReps>60 && sitCheck==0) {
+        if(sitReps>52 && sitCheck==0) {
             sitPoints=25;
             totalScore+=25;
         }
@@ -95,7 +95,7 @@ public class FemaleCalculator {
             return totalScore;
         }
         //Not better than CDO GOLD so check the table for points
-        for (int i = 1; i < scores.runningScores.size() - 1; i++) {
+        for (int i = 0; i < scores.runningScores.size(); i++) {
             if (scores.runningScores.get(i).get(0) <= userTime && userTime < scores.runningScores.get(i + 1).get(0)) {
                 totalScore += scores.runningScores.get(i).get(colToRetrieve);
                 runPoints = scores.runningScores.get(i).get(colToRetrieve);

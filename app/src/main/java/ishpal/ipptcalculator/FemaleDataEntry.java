@@ -68,7 +68,7 @@ public class FemaleDataEntry extends AppCompatActivity implements View.OnClickLi
             givenAge = extraBundle.getInt("age");
             category = extraBundle.getString("cat");
             //just to check
-            Toast.makeText(this,"Age: "+givenAge, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this,"Age: "+givenAge, Toast.LENGTH_SHORT).show();
         }
 
 
@@ -101,7 +101,7 @@ public class FemaleDataEntry extends AppCompatActivity implements View.OnClickLi
 
                     //FOR TESTING DONT REMOVE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                     Toast test = Toast.makeText(this,""+toCheckScore.getAgeGroup()+"\n"+ toCheckScore.getRunPoints()+"\n"+toCheckScore.getSitUpPoints()+"\n"+toCheckScore.getPushUpPoints(),Toast.LENGTH_LONG);
-                    test.show();
+                    //test.show();
 
                 } else {
                     Toast toast = Toast.makeText(this, "Your Points: " + score + "\nGold (≥85 points)\nSilver (≥75 points)\nPass with Incentive (≥61 points)\nPass (≥51 points)\n", Toast.LENGTH_LONG);
@@ -112,7 +112,7 @@ public class FemaleDataEntry extends AppCompatActivity implements View.OnClickLi
 
                     //FOR TESTING DONT REMOVE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                     Toast test = Toast.makeText(this,""+toCheckScore.getAgeGroup()+"\n"+ toCheckScore.getRunPoints()+"\n"+toCheckScore.getSitUpPoints()+"\n"+toCheckScore.getPushUpPoints(),Toast.LENGTH_LONG);
-                    test.show();
+                    //test.show();
                 }
 
                 /*String award = toCheckScore.getAward();
